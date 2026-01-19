@@ -1,0 +1,11 @@
+const Hero = () => {
+  return (
+    <>
+       <div className="hero-section">
+         <h1>Welcome to Our Website</h1>
+         <p>Your journey to excellence starts here.</p>
+       </div> 
+    </>
+    );
+};
+export default Hero;
