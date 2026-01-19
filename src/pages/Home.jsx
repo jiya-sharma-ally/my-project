@@ -1,11 +1,13 @@
 import Nav from "../components/home/Nav.jsx";
-import Hero from "../components/home/Hero.jsx";
+import Hero from "../components/Hero.jsx";
+
+
 
 const Home = () => {
   return (
     <>
       <Nav />
-      <Hero />
+      <Hero />      
     </>
   );
 };
