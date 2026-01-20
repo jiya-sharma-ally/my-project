@@ -92,9 +92,7 @@ const Nav = () => {
               <li className="px-4 py-2 hover:bg-gray-100">
                 <Link to="/Profile">My Profile</Link>
               </li>
-              <li className="px-4 py-2 hover:bg-gray-100">My Orders</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Coupons</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Gift Cards</li>
+              <li className="px-4 py-2 hover:bg-gray-100">My Orders</li>      
               <li className="px-4 py-2 hover:bg-gray-100 text-red-500">Logout</li>
             </ul>
 
