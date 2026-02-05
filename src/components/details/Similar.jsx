@@ -41,7 +41,7 @@ const Similar = () => {
                             className="w-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition duration-500"
                         />
 
-
+                        
                         <div className="absolute top-3 right-[-60px] group-hover:right-3 transition-all duration-500">
 
                             <div className="relative group/cart">
@@ -62,7 +62,7 @@ const Similar = () => {
 
                     </div>
 
-
+                  
                     <p className="mt-3 text-sm font-medium">
                         Polo - Speed Hunters Oversized
                     </p>
@@ -89,7 +89,7 @@ const Similar = () => {
                             className="w-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition duration-500"
                         />
 
-
+                       
                         <div className="absolute top-3 right-[-60px] group-hover:right-3 transition-all duration-500">
                             <div className="relative group/cart">
                                 <div className="bg-white p-2 rounded-full shadow-lg cursor-pointer">
@@ -175,7 +175,7 @@ const Similar = () => {
                             className="w-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition duration-500"
                         />
 
-
+                       
                         <div className="absolute top-3 right-[-60px] group-hover:right-3 transition-all duration-500">
                             <div className="relative group/cart">
                                 <div className="bg-white p-2 rounded-full shadow-lg cursor-pointer">
@@ -222,7 +222,7 @@ const Similar = () => {
                             className="w-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition duration-500"
                         />
 
-
+                 
                         <div className="absolute top-3 right-[-60px] group-hover:right-3 transition-all duration-500">
                             <div className="relative group/cart">
                                 <div className="bg-white p-2 rounded-full shadow-lg cursor-pointer">
@@ -269,7 +269,7 @@ const Similar = () => {
                             className="w-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition duration-500"
                         />
 
-
+                  
                         <div className="absolute top-3 right-[-60px] group-hover:right-3 transition-all duration-500">
                             <div className="relative group/cart">
                                 <div className="bg-white p-2 rounded-full shadow-lg cursor-pointer">
@@ -349,5 +349,6 @@ const Similar = () => {
         </div>
     );
 };
+
 
 export default Similar;
