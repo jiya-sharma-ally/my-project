@@ -98,10 +98,11 @@ const Bestseller = () => {
 <div className="relative bg-white h-[320px] flex items-center justify-center group">
 
   {/* Heart Icon */}
-  <span className="absolute top-3 right-3 text-xl z-10">
-    <FaRegHeart />
-  </span>
-  
+  <button className="absolute top-3 right-3 text-xl z-10 
+                   text-black hover:text-red-500 transition">
+  <FaRegHeart />
+</button>
+
 
   <div className="relative h-[260px] w-full">
   {/* Normal Image */}

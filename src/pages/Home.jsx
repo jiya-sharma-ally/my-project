@@ -7,6 +7,7 @@ import Women from "../components/home/women.jsx";
 import Sneaker from "../components/home/Sneaker.jsx";
 import Newarrival from "../components/home/Newarrival.jsx";
 import Bestseller from "../components/home/Bestseller.jsx";
+import Footer from "../components/home/Footer.jsx";
 
 
 
@@ -22,6 +23,7 @@ const Home = () => {
       <Sneaker />
       <Newarrival />
       <Bestseller />
+      <Footer />
       
     </>
   );
