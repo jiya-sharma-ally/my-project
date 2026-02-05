@@ -29,7 +29,7 @@ const bestSellers = [
     price: "₹3,799",
     rating: "4.7",
     img: women1,
-  },
+  },      
   {
     id: 3,
     title: "Air Street Sneakers",
