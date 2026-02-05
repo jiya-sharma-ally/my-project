@@ -17,46 +17,46 @@ const Nav = () => {
         {/* CENTER (DESKTOP ONLY) */}
         <ul className="hidden md:flex items-center gap-8 font-semibold text-lg tracking-wide list-none">
 
-  {/* MEN */}
-  <li className="relative group cursor-pointer">
-    <span className="hover-underline">MEN</span>
-    <div className="absolute top-8 left-0 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
-      <ul className="text-sm font-medium text-gray-700 min-w-[160px]">
-        <li className="px-4 py-2 hover:bg-gray-100">T-Shirts</li>
-        <li className="px-4 py-2 hover:bg-gray-100">Oversized Tees</li>
-        <li className="px-4 py-2 hover:bg-gray-100">Sneakers</li>
-      </ul>
-    </div>
-  </li>
+          {/* MEN */}
+          <li className="relative group cursor-pointer">
+            <span className="hover-underline">MEN</span>
+            <div className="absolute top-8 left-0 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+              <ul className="text-sm font-medium text-gray-700 min-w-[160px]">
+                <li className="px-4 py-2 hover:bg-gray-100">T-Shirts</li>
+                <li className="px-4 py-2 hover:bg-gray-100">Oversized Tees</li>
+                <li className="px-4 py-2 hover:bg-gray-100">Sneakers</li>
+              </ul>
+            </div>
+          </li>
 
-  {/* WOMEN */}
-  <li className="relative group cursor-pointer">
-    <span className="hover-underline">WOMEN</span>
-    <div className="absolute top-8 left-0 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
-      <ul className="text-sm font-medium text-gray-700 min-w-[160px]">
-        <li className="px-4 py-2 hover:bg-gray-100">Crop Tees</li>
-        <li className="px-4 py-2 hover:bg-gray-100">Oversized</li>
-        <li className="px-4 py-2 hover:bg-gray-100">Sneakers</li>
-      </ul>
-    </div>
-  </li>
+          {/* WOMEN */}
+          <li className="relative group cursor-pointer">
+            <span className="hover-underline">WOMEN</span>
+            <div className="absolute top-8 left-0 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+              <ul className="text-sm font-medium text-gray-700 min-w-[160px]">
+                <li className="px-4 py-2 hover:bg-gray-100">Crop Tees</li>
+                <li className="px-4 py-2 hover:bg-gray-100">Oversized</li>
+                <li className="px-4 py-2 hover:bg-gray-100">Sneakers</li>
+              </ul>
+            </div>
+          </li>
 
-  {/* SNEAKERS */}
-  <li className="relative group cursor-pointer">
-    <span className="hover-underline">SNEAKERS</span>
-    <div className="absolute top-8 left-0 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
-      <ul className="text-sm font-medium text-gray-700 min-w-[160px]">
-        <li className="px-4 py-2 hover:bg-gray-100">Casual</li>
-        <li className="px-4 py-2 hover:bg-gray-100">Minimal</li>
-        <li className="px-4 py-2 hover:bg-gray-100">Retro</li>
-      </ul>
-    </div>
-  </li>
+          {/* SNEAKERS */}
+          <li className="relative group cursor-pointer">
+            <span className="hover-underline">SNEAKERS</span>
+            <div className="absolute top-8 left-0 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+              <ul className="text-sm font-medium text-gray-700 min-w-[160px]">
+                <li className="px-4 py-2 hover:bg-gray-100">Casual</li>
+                <li className="px-4 py-2 hover:bg-gray-100">Minimal</li>
+                <li className="px-4 py-2 hover:bg-gray-100">Retro</li>
+              </ul>
+            </div>
+          </li>
 
-  <li className="hover-underline cursor-pointer">BEST SELLER</li>
-  <li className="hover-underline cursor-pointer">NEW ARRIVALS</li>
+          <li className="hover-underline cursor-pointer">BEST SELLER</li>
+          <li className="hover-underline cursor-pointer">NEW ARRIVALS</li>
 
-</ul>
+        </ul>
 
 
         {/* RIGHT */}
@@ -73,35 +73,35 @@ const Nav = () => {
           </div>
 
           <div className="relative group cursor-pointer">
-  <Heart size={20} />
-  <span className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap
+            <Heart size={20} />
+            <span className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap
                    bg-black text-white text-xs px-2 py-1 rounded
                    opacity-0 group-hover:opacity-100 transition">
-    Wishlist
-  </span>
-</div>
+              Wishlist
+            </span>
+          </div>
 
-         <div className="relative group cursor-pointer">
-  <ShoppingCart size={20} />
-  <span className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap
+          <div className="relative group cursor-pointer">
+            <ShoppingCart size={20} />
+            <span className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap
                    bg-black text-white text-xs px-2 py-1 rounded
                    opacity-0 group-hover:opacity-100 transition">
-    Cart
-  </span>
-</div>
+              Cart
+            </span>
+          </div>
 
 
           {/* Profile */}
-         <div className="relative group cursor-pointer">
-  <Link to="/profile">
-    <User size={22} />
-  </Link>
-  <span className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap
+          <div className="relative group cursor-pointer">
+            <Link to="/profile">
+              <User size={22} />
+            </Link>
+            <span className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap
                    bg-black text-white text-xs px-2 py-1 rounded
                    opacity-0 group-hover:opacity-100 transition">
-    Profile
-  </span>
-</div>
+              Profile
+            </span>
+          </div>
 
 
           {/* HAMBURGER (MOBILE ONLY) */}
@@ -117,9 +117,8 @@ const Nav = () => {
 
       {/* MOBILE MENU */}
       <div
-        className={`fixed inset-0 bg-black/40 z-40 transition ${
-          open ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`fixed inset-0 bg-black/40 z-40 transition ${open ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
         onClick={() => setOpen(false)}
       ></div>
 
