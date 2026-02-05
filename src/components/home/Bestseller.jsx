@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { FaStar } from "react-icons/fa";
 
-import "swiper/css";
+import "swiper/css";        
 
 /* Images */
 import men1 from "../../assets/images/men1.png";
