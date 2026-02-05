@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { IoCartOutline } from "react-icons/io5";
 
 import women1 from "../../assets/images/women1.png";
 import women2 from "../../assets/images/women2.png";
@@ -62,7 +63,6 @@ const Women = () => {
   return (
     <section className="w-full py-20 bg-[#f6f6f6]">
       <div className="max-w-7xl mx-auto px-6">
-
         <h2 className="text-4xl font-extrabold text-[#633426] mb-14">
           Women’s Collection
         </h2>
@@ -77,10 +77,35 @@ const Women = () => {
             1024: { slidesPerView: 4 },
           }}
         >
-
           {womenProducts.map((product) => (
             <SwiperSlide key={product.id}>
-              <div className="relative h-[420px] rounded-3xl overflow-hidden bg-gradient-to-b from-[#4b4b4b] to-[#2b2b2b] text-white group">
+              <div
+                className="relative h-[420px] overflow-hidden bg-amber-50 text-black group
+                border border-black/20 rounded-3xl shadow-md hover:shadow-xl
+                transition duration-300"
+              >
+                {/* Cart Icon */}
+                {/* Cart Icon with Tooltip */}
+<div className="absolute top-4 right-4 z-10 group/cart">
+  <button
+    className="w-10 h-10 rounded-full 
+               bg-white text-black flex items-center justify-center
+               shadow-md transition duration-300
+               hover:bg-[#633426] hover:text-white"
+  >
+    <IoCartOutline size={20} />
+  </button>
+
+  {/* Tooltip */}
+  <span
+    className="absolute -bottom-9 left-1/2 -translate-x-1/2
+               bg-black text-white text-xs px-2 py-1 rounded
+               opacity-0 group-hover/cart:opacity-100
+               transition duration-300 whitespace-nowrap"
+  >
+    Add to cart
+  </span>
+</div>
 
                 {/* Rating */}
                 <div className="absolute top-4 left-4 text-sm flex items-center gap-1 z-10">
@@ -108,16 +133,14 @@ const Women = () => {
                 {/* Action Button */}
                 <div className="absolute bottom-4 right-4 z-10">
                   <Link to={`/product/${product.id}`}>
-                    <button className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:scale-105 transition">
+                    <button className="w-10 h-10 rounded-full bg-[#633426] text-white flex items-center justify-center hover:scale-105 transition">
                       <MdArrowOutward />
                     </button>
                   </Link>
                 </div>
-
               </div>
             </SwiperSlide>
           ))}
-
         </Swiper>
       </div>
     </section>
