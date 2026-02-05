@@ -17,7 +17,7 @@ import men1Hover from "../../assets/images/men1-2.png";
 import women1Hover from "../../assets/images/tee2.png";
 import sneaker1Hover from "../../assets/images/sneaker1-2.png";
 import men2Hover from "../../assets/images/wtee.png";
-import women2Hover from "../../assets/images/man1-2.png";
+import women2Hover from "../../assets/images/man1-2.png"; 
 import sneaker2Hover from "../../assets/images/shoe2.png";
 
 
