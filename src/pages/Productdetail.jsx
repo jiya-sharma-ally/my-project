@@ -1,13 +1,14 @@
 import { useState } from "react";
 
-import img1 from "../assets/images/men1.png";
-import img2 from "../assets/images/men2.png";
-import img3 from "../assets/images/men3.png";
-import img4 from "../assets/images/men4.png";
+import detail1 from "../assets/images/detail1.png";
+import detail2 from "../assets/images/detail2.png";
+import detail3 from "../assets/images/detail3.png";
+import detail4 from "../assets/images/detail4.png";
+import SimilarProducts from "../components/details/similar";
 
-const images = [img1, img2, img3, img4];
+const images = [detail1, detail2, detail3, detail4];
 const sizes = ["S", "M", "L", "XL", "XXL", "3XL"];
-const colors = ["#5b6cff", "#5f6d6a", "#000000", "#f2b6b6"];
+const colors = ["#5b6cff", "#5f6d6a", "#CE3F3F", "#f2b6b6"];
 
 const ProductDetail = () => {
   const [activeImg, setActiveImg] = useState(images[0]);
@@ -16,144 +17,190 @@ const ProductDetail = () => {
   const [activeColor, setActiveColor] = useState(colors[0]);
 
   return (
-    <section className="w-full bg-[#f5f5f5] py-12">
-      <div className="max-w-350 mx-auto px-10 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20">
-        {/* LEFT IMAGE AREA */}
-        <div className="flex gap-6">
-          {/* Thumbnails */}
-          <div className="flex flex-col gap-3">
-            {images.map((img, i) => (
-              <div
-                key={i}
-                onClick={() => setActiveImg(img)}
-                className={`w-20 h-24 bg-white rounded-md border cursor-pointer flex items-center justify-center
-                  ${activeImg === img ? "border-black" : "border-transparent"}`}
-              >
-                <img src={img} alt="" className="h-full object-contain" />
-              </div>
-            ))}
-          </div>
+    <>
+      <section className="w-full  py-12">
+        <div className="max-w-350 mx-auto px-10 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20">
+          {/* LEFT IMAGE AREA */}
+          <div className="flex gap-6 self-start">
 
-          {/* Main Image */}
-          <div className="flex-1 bg-[#e9e9e9] rounded-xl flex items-center justify-center relative">
-            <img
-              src={activeImg}
-              alt="product"
-              className="h-140 object-contain"
-            />
-
-            {/* arrows (visual only) */}
-            <button className="absolute left-4 bg-white w-9 h-9 rounded-full shadow flex items-center justify-center">
-              ‹
-            </button>
-            <button className="absolute right-4 bg-white w-9 h-9 rounded-full shadow flex items-center justify-center">
-              ›
-            </button>
-          </div>
-        </div>
-
-        {/* RIGHT INFO AREA */}
-        <div className="max-w-md">
-          <h1 className="text-2xl font-semibold mb-2">
-            Nike ACG “Wolf Tree” Polartec
-          </h1>
-
-          <div className="flex items-center gap-2 text-sm mb-3">
-            <span className="font-semibold">₹25,000</span>
-            <span className="text-yellow-500">★ 5.0</span>
-          </div>
-
-          <p className="text-sm text-gray-500 mb-6">
-           Pay in 4 interest-free installments on orders over ₹5,000.
-Enjoy flexible payments with zero interest and no hidden charges. Shop now and pay over time with complete peace of mind.
-          </p>
-
-          {/* COLORS */}
-          <div className="mb-6">
-            <p className="text-sm font-medium mb-2">Select Color</p>
-            <div className="flex gap-3">
-              {colors.map((color, i) => (
-                <span
+            {/* Thumbnails */}
+            <div className="flex flex-col gap-3">
+              {images.map((img, i) => (
+                <div
                   key={i}
-                  onClick={() => setActiveColor(color)}
-                  style={{ backgroundColor: color }}
-                  className={`w-7 h-7 rounded-full cursor-pointer border
-                    ${activeColor === color ? "ring-2 ring-black" : ""}`}
-                ></span>
-              ))}
-            </div>
-          </div>
-
-          {/* SIZES */}
-          <div className="mb-6">
-            <p className="text-sm font-medium mb-2">Select Size</p>
-            <div className="grid grid-cols-6 gap-2">
-              {sizes.map((size) => (
-                <button
-                  key={size}
-                  onClick={() => setSelectedSize(size)}
-                  className={`py-2 border text-sm
-                    ${
-                      selectedSize === size ? "border-black" : "border-gray-300"
-                    }`}
+                  onClick={() => setActiveImg(img)}
+                  className={`w-20 h-24 bg-white rounded-md border cursor-pointer flex items-center justify-center
+${activeImg === img ? "border-black" : "border-transparent"}`}
                 >
-                  {size}
-                </button>
+                  <img src={img} alt="" className="h-full object-contain" />
+                </div>
               ))}
             </div>
-          </div>
 
-          {/* QUANTITY */}
-          <div className="mb-6">
-            <p className="text-sm font-medium mb-2">Quantity</p>
-            <div className="flex items-center border w-max">
-              <button
-                onClick={() => qty > 1 && setQty(qty - 1)}
-                className="px-4 py-2"
-              >
-                −
+            {/* Main Image */}
+            <div className="flex-1 bg-[#ced9dc] rounded-xl relative h-[520px] overflow-hidden flex items-center justify-center">
+
+
+              <img
+                src={activeImg}
+                alt="product"
+                className="max-h-full max-w-full object-contain"
+
+              />
+
+              {/* arrows (visual only) */}
+              <button className="absolute left-4 bg-white w-9 h-9 rounded-full shadow flex items-center justify-center">
+                ‹
               </button>
-              <span className="px-4">{qty}</span>
-              <button onClick={() => setQty(qty + 1)} className="px-4 py-2">
-                +
+              <button className="absolute right-4 bg-white w-9 h-9 rounded-full shadow flex items-center justify-center">
+                ›
               </button>
             </div>
           </div>
 
-          {/* CTA BUTTONS */}
-          <div className="flex gap-3 mb-8 relative z-20">
-            <button className="mt-4 w-full border border-[#633426] text-[#633426] py-2 rounded-lg text-sm font-medium hover:bg-[#633426] hover:text-white transition">
+          {/* RIGHT INFO AREA */}
+          <div className="max-w-md">
+            <h1 className="text-2xl font-semibold mb-2">
+              Nike ACG “Wolf Tree” Polartec
+            </h1>
+
+            <div className="flex items-center gap-2 text-sm mb-3">
+              <span className="font-semibold">₹2000</span>
+              <span className="text-yellow-500">★ 5.0</span>
+            </div>
+
+            <p className="text-sm text-gray-500 mb-6">
+              Pay in 4 interest-free installments on orders over ₹5,000.
+              Enjoy flexible payments with zero interest and no hidden charges. Shop now and pay over time with complete peace of mind.
+            </p>
+
+            {/* COLORS */}
+            <div className="mb-6">
+              <p className="text-sm font-medium mb-2">Select Color</p>
+              <div className="flex gap-3">
+                {colors.map((color, i) => (
+                  <span
+                    key={i}
+                    onClick={() => setActiveColor(color)}
+                    style={{ backgroundColor: color }}
+                    className={`w-7 h-7 rounded-full cursor-pointer border
+${activeColor === color ? "ring-1 ring-black" : ""}`}
+                  ></span>
+                ))}
+              </div>
+            </div>
+
+            {/* SIZES */}
+            <div className="mb-6">
+              <p className="text-sm font-medium mb-2">Select Size</p>
+              <div className="grid grid-cols-6 gap-2">
+                {sizes.map((size) => (
+                  <button
+                    key={size}
+                    onClick={() => setSelectedSize(size)}
+                    className={`py-2 border text-sm
+${selectedSize === size ? "border-black" : "border-gray-300"
+                      }`}
+                  >
+                    {size}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* QUANTITY */}
+            <div className="mb-6">
+              <p className="text-sm font-medium mb-2">Quantity</p>
+              <div className="flex items-center border w-max">
+                <button
+                  onClick={() => qty > 1 && setQty(qty - 1)}
+                  className="px-4 py-2"
+                >
+                  −
+                </button>
+                <span className="px-4">{qty}</span>
+                <button onClick={() => setQty(qty + 1)} className="px-4 py-2">
+                  +
+                </button>
+              </div>
+            </div>
+
+            {/* CTA BUTTONS */}
+            <div className="flex gap-3 mb-8 relative z-20">
+              <button className="mt-4 w-full border border-[#633426] text-[#633426] py-2 rounded-lg text-sm font-medium hover:bg-[#633426] hover:text-white transition">
                 Buy now
               </button>
 
-            <button className="mt-4 w-full border border-[#633426] text-[#633426] py-2 rounded-lg text-sm font-medium hover:bg-[#633426] hover:text-white transition">
+              <button className="mt-4 w-full border border-[#633426] text-[#633426] py-2 rounded-lg text-sm font-medium hover:bg-[#633426] hover:text-white transition">
                 Add to cart
               </button>
-          </div>
+            </div>
 
-          {/* ACCORDION */}
-          <div className="border-t text-sm">
-            
+            {/* ACCORDION */}
+            <div className="border-t text-sm">
 
-            <details className="py-4 border-b">
-              <summary className="cursor-pointer font-medium">
-                Shipping & Returns
-              </summary>
-              <p className="mt-2 text-gray-600">
-                Free shipping & 7-day easy returns.
-              </p>
-            </details>
 
-            <details className="py-4">
-              <summary className="cursor-pointer font-medium">Details</summary>
-              <p className="mt-2 text-gray-600">
-                Fabric: Polartec • Fit: Regular • Care: Machine wash
-              </p>
-            </details>
+              <details className="py-4 border-b">
+                <summary className="cursor-pointer font-medium">
+                  Shipping & Returns 
+                </summary>
+                <p className="mt-2 text-gray-600">
+                  7 days easy returns and exchange
+ </p>
+<div className="max-w-4xl mx-auto px-6 py-10">
+ 
+  <ul className="list-disc pl-6 space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
+    <li>
+      We offer a hassle-free return and exchange policy for 7 days from the date of delivery.
+    </li>
+
+    <li>
+      Please choose the prepaid option instead of COD to avoid a INR 50 handling fee per product.
+    </li>
+
+    <li>
+      We offer free shipping on all orders.
+    </li>
+
+    <li>
+      Refunds for prepaid orders are processed back to the original payment method, while COD refunds are issued as Store Credits in your Crazymonk wallet.
+    </li>
+
+    <li>
+      We strongly recommend recording a video while opening/unpacking your order, ensuring all stickers/labels are intact. This video will serve as proof in case of missing or damaged product(s) or parcel(s). Without video proof, it will be difficult for us to proceed with returns or refunds.
+    </li>
+
+    <li>
+      Exchanges are subject to stock availability and can be initiated only once per product.
+    </li>
+
+    <li>
+      Orders can be cancelled or modified (change number, address, product style or size) if they have not yet been dispatched from our warehouse. Contact us via WhatsApp or email us at support@crazymonk.in to request changes.
+    </li>
+
+    <li>
+      For detailed information, please visit our Returns, Exchange, and Refund Policy page.
+    </li>
+  </ul>
+</div>
+
+               
+              </details>
+
+              <details className="py-4">
+                <summary className="cursor-pointer font-medium">Details</summary>
+                <p className="mt-2 text-gray-600">
+                  Fabric: Polartec • Fit: Regular • Care: Machine wash
+                </p>
+              </details>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Similar Products BELOW section */}
+      <SimilarProducts />
+    </>
   );
 };
 
