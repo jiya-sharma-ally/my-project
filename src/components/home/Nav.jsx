@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
-
+  const [showProfile, setShowProfile] = useState(false);
   return (
     <nav className="w-full border-b shadow-sm bg-[#f3e9dc]">
       {/* TOP BAR */}
@@ -81,8 +81,18 @@ const Nav = () => {
   </span>
 </div>
 
-         <div className="relative group cursor-pointer">
+    <div className="relative group cursor-pointer">
+  {/* Cart Icon */}
   <ShoppingCart size={20} />
+
+  {/* Badge */}
+  <span className="absolute -top-2 -right-2 bg-[#633426] text-white 
+                   text-[10px] w-4 h-4 flex items-center justify-center 
+                   rounded-full">
+    3
+  </span>
+
+  {/* Tooltip */}
   <span className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap
                    bg-black text-white text-xs px-2 py-1 rounded
                    opacity-0 group-hover:opacity-100 transition">
@@ -90,18 +100,23 @@ const Nav = () => {
   </span>
 </div>
 
+{/* profile */}
+    <div className="relative group cursor-pointer">
+  <User size={22} />
+  <div className="absolute top-full right-0 mt-2 w-44 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
 
-          {/* Profile */}
-         <div className="relative group cursor-pointer">
-  <Link to="/profile">
-    <User size={22} />
-  </Link>
-  <span className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap
-                   bg-black text-white text-xs px-2 py-1 rounded
-                   opacity-0 group-hover:opacity-100 transition">
-    Profile
-  </span>
+    <ul className="text-sm font-medium text-gray-700">
+      <li
+        onClick={() => setShowProfile(true)}
+        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+      >
+        My Profile
+      </li>
+    </ul>
+
+  </div>
 </div>
+
 
 
           {/* HAMBURGER (MOBILE ONLY) */}
@@ -143,12 +158,82 @@ const Nav = () => {
           <li className="border-b pb-2">BEST SELLER</li>
           <li className="border-b pb-2">NEW ARRIVALS</li>
           <li className="border-b pb-2">
-            <Link to="/profile">My Profile</Link>
+            <li className="border-b pb-2">
+  <Link to="/profile">My Profile</Link>
+</li>
+
           </li>
         </ul>
       </div>
+      {showProfile && (
+  <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+
+    <div className="w-[95%] max-w-5xl h-[420px] bg-white rounded-2xl overflow-hidden flex relative shadow-2xl">
+
+      {/* Close Button */}
+      <button
+        onClick={() => setShowProfile(false)}
+        className="absolute top-4 right-4 text-black text-2xl z-10"
+      >
+        ✕
+      </button>
+
+      {/* LEFT BLACK SECTION */}
+      <div className="w-1/2 bg-black text-white flex flex-col justify-center items-center p-10">
+    <h1 className="text-5xl font-extrabold tracking-wider mb-6">
+  DRIPTEES
+</h1>
+
+
+
+        <p className="text-xl text-center font-semibold">
+          Welcome! <br />
+          Register to avail the best deals!
+        </p>
+      </div>
+
+      {/* RIGHT FORM SECTION */}
+      <div className="w-1/2 flex flex-col justify-center px-12">
+
+        <h2 className="text-2xl font-bold mb-2 text-center">
+          Login / Signup
+        </h2>
+
+        <p className="text-center text-gray-500 mb-6">
+          Enter Mobile Number
+        </p>
+
+        {/* Phone Input */}
+        <div className="flex border rounded-lg overflow-hidden mb-6">
+          <div className="px-4 flex items-center border-r bg-gray-50">
+            🇮🇳 +91
+          </div>
+          <input
+            type="text"
+            placeholder="Enter Mobile Number"
+            className="flex-1 px-4 py-3 outline-none"
+          />
+        </div>
+
+        <p className="text-xs text-center text-gray-400">
+          By logging in, you're agreeing to our{" "}
+          <span className="underline cursor-pointer">Privacy Policy</span>{" "}
+          and{" "}
+          <span className="underline cursor-pointer">Terms of Service</span>
+        </p>
+
+        <p className="text-center mt-4 text-sm text-blue-600 underline cursor-pointer">
+          Trouble logging in?
+        </p>
+
+      </div>
+    </div>
+  </div>
+)}
+
     </nav>
   );
 };
+
 
 export default Nav;

@@ -11,7 +11,8 @@ const sizes = ["S", "M", "L", "XL", "XXL", "3XL"];
 const colors = ["#5b6cff", "#5f6d6a", "#CE3F3F", "#f2b6b6"];
 
 const ProductDetail = () => {
-  const [activeImg, setActiveImg] = useState(images[0]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeImg = images[activeIndex];
   const [selectedSize, setSelectedSize] = useState("M");
   const [qty, setQty] = useState(1);
   const [activeColor, setActiveColor] = useState(colors[0]);
@@ -28,7 +29,7 @@ const ProductDetail = () => {
               {images.map((img, i) => (
                 <div
                   key={i}
-                  onClick={() => setActiveImg(img)}
+                  onClick={() => setActiveIndex(i)}
                   className={`w-20 h-24 bg-white rounded-md border cursor-pointer flex items-center justify-center
 ${activeImg === img ? "border-black" : "border-transparent"}`}
                 >
@@ -38,7 +39,7 @@ ${activeImg === img ? "border-black" : "border-transparent"}`}
             </div>
 
             {/* Main Image */}
-            <div className="flex-1 bg-[#ced9dc] rounded-xl relative h-[520px] overflow-hidden flex items-center justify-center">
+            <div className="flex-1 bg-[#ced9dc] rounded-xl relative h-130 overflow-hidden flex items-center justify-center">
 
 
               <img
@@ -49,12 +50,30 @@ ${activeImg === img ? "border-black" : "border-transparent"}`}
               />
 
               {/* arrows (visual only) */}
-              <button className="absolute left-4 bg-white w-9 h-9 rounded-full shadow flex items-center justify-center">
+              {/* Left Arrow */}
+              <button
+                onClick={() =>
+                  setActiveIndex((prev) =>
+                    prev === 0 ? images.length - 1 : prev - 1
+                  )
+                }
+                className="absolute left-4 bg-white w-9 h-9 rounded-full shadow flex items-center justify-center cursor-pointer"
+              >
                 ‹
               </button>
-              <button className="absolute right-4 bg-white w-9 h-9 rounded-full shadow flex items-center justify-center">
+
+              {/* Right Arrow */}
+              <button
+                onClick={() =>
+                  setActiveIndex((prev) =>
+                    prev === images.length - 1 ? 0 : prev + 1
+                  )
+                }
+                className="absolute right-4 bg-white w-9 h-9 rounded-full shadow flex items-center justify-center cursor-pointer"
+              >
                 ›
               </button>
+
             </div>
           </div>
 
@@ -91,35 +110,36 @@ ${activeColor === color ? "ring-1 ring-black" : ""}`}
             </div>
 
             {/* SIZES */}
-            <div className="mb-6">
-              <p className="text-sm font-medium mb-2">Select Size</p>
-              <div className="grid grid-cols-6 gap-2">
-                {sizes.map((size) => (
-                  <button
-                    key={size}
-                    onClick={() => setSelectedSize(size)}
-                    className={`py-2 border text-sm
-${selectedSize === size ? "border-black" : "border-gray-300"
-                      }`}
-                  >
-                    {size}
-                  </button>
-                ))}
-              </div>
-            </div>
+          <div className="mb-6">
+  <p className="text-sm font-medium mb-2">Select Size</p>
+  <div className="grid grid-cols-6 gap-2">
+    {sizes.map((size) => (
+      <button
+        key={size}
+        onClick={() => setSelectedSize(size)}
+        className={`py-2 border text-sm cursor-pointer
+          ${selectedSize === size ? "border-black" : "border-gray-300"}
+        `}
+      >
+        {size}
+      </button>
+    ))}
+  </div>
+</div>
+
 
             {/* QUANTITY */}
-            <div className="mb-6">
+            <div className="mb-6 ">
               <p className="text-sm font-medium mb-2">Quantity</p>
               <div className="flex items-center border w-max">
                 <button
                   onClick={() => qty > 1 && setQty(qty - 1)}
-                  className="px-4 py-2"
+                  className="px-4 py-2 cursor-pointer"
                 >
                   −
                 </button>
                 <span className="px-4">{qty}</span>
-                <button onClick={() => setQty(qty + 1)} className="px-4 py-2">
+                <button onClick={() => setQty(qty + 1)} className="px-4 py-2 cursor-pointer">
                   +
                 </button>
               </div>
@@ -127,11 +147,11 @@ ${selectedSize === size ? "border-black" : "border-gray-300"
 
             {/* CTA BUTTONS */}
             <div className="flex gap-3 mb-8 relative z-20">
-              <button className="mt-4 w-full border border-[#633426] text-[#633426] py-2 rounded-lg text-sm font-medium hover:bg-[#633426] hover:text-white transition">
+              <button className="mt-4 w-full border border-[#633426] text-[#633426] py-2 rounded-lg text-sm font-medium hover:bg-[#633426] hover:text-white transition cursor-pointer">
                 Buy now
               </button>
 
-              <button className="mt-4 w-full border border-[#633426] text-[#633426] py-2 rounded-lg text-sm font-medium hover:bg-[#633426] hover:text-white transition">
+              <button className="mt-4 w-full border border-[#633426] text-[#633426] py-2 rounded-lg text-sm font-medium hover:bg-[#633426] hover:text-white transition cursor-pointer">
                 Add to cart
               </button>
             </div>
@@ -142,49 +162,49 @@ ${selectedSize === size ? "border-black" : "border-gray-300"
 
               <details className="py-4 border-b">
                 <summary className="cursor-pointer font-medium">
-                  Shipping & Returns 
+                  Shipping & Returns
                 </summary>
                 <p className="mt-2 text-gray-600">
                   7 days easy returns and exchange
- </p>
-<div className="max-w-4xl mx-auto px-6 py-10">
- 
-  <ul className="list-disc pl-6 space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
-    <li>
-      We offer a hassle-free return and exchange policy for 7 days from the date of delivery.
-    </li>
+                </p>
+                <div className="max-w-4xl mx-auto px-6 py-10">
 
-    <li>
-      Please choose the prepaid option instead of COD to avoid a INR 50 handling fee per product.
-    </li>
+                  <ul className="list-disc pl-6 space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
+                    <li>
+                      We offer a hassle-free return and exchange policy for 7 days from the date of delivery.
+                    </li>
 
-    <li>
-      We offer free shipping on all orders.
-    </li>
+                    <li>
+                      Please choose the prepaid option instead of COD to avoid a INR 50 handling fee per product.
+                    </li>
 
-    <li>
-      Refunds for prepaid orders are processed back to the original payment method, while COD refunds are issued as Store Credits in your Crazymonk wallet.
-    </li>
+                    <li>
+                      We offer free shipping on all orders.
+                    </li>
 
-    <li>
-      We strongly recommend recording a video while opening/unpacking your order, ensuring all stickers/labels are intact. This video will serve as proof in case of missing or damaged product(s) or parcel(s). Without video proof, it will be difficult for us to proceed with returns or refunds.
-    </li>
+                    <li>
+                      Refunds for prepaid orders are processed back to the original payment method, while COD refunds are issued as Store Credits in your Crazymonk wallet.
+                    </li>
 
-    <li>
-      Exchanges are subject to stock availability and can be initiated only once per product.
-    </li>
+                    <li>
+                      We strongly recommend recording a video while opening/unpacking your order, ensuring all stickers/labels are intact. This video will serve as proof in case of missing or damaged product(s) or parcel(s). Without video proof, it will be difficult for us to proceed with returns or refunds.
+                    </li>
 
-    <li>
-      Orders can be cancelled or modified (change number, address, product style or size) if they have not yet been dispatched from our warehouse. Contact us via WhatsApp or email us at support@crazymonk.in to request changes.
-    </li>
+                    <li>
+                      Exchanges are subject to stock availability and can be initiated only once per product.
+                    </li>
 
-    <li>
-      For detailed information, please visit our Returns, Exchange, and Refund Policy page.
-    </li>
-  </ul>
-</div>
+                    <li>
+                      Orders can be cancelled or modified (change number, address, product style or size) if they have not yet been dispatched from our warehouse. Contact us via WhatsApp or email us at support@crazymonk.in to request changes.
+                    </li>
 
-               
+                    <li>
+                      For detailed information, please visit our Returns, Exchange, and Refund Policy page.
+                    </li>
+                  </ul>
+                </div>
+
+
               </details>
 
               <details className="py-4">
