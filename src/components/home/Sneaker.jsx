@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
+
 import sneaker1 from "../../assets/images/sneaker1.png";
 import sneaker2 from "../../assets/images/sneaker2.png";
 import sneaker3 from "../../assets/images/sneaker3.png";
@@ -93,9 +96,11 @@ const Sneaker = () => {
                 </div>
 
                 {/* Button */}
-                <button className="mt-4 w-full border border-[#633426] text-[#633426] py-2 rounded-lg text-sm font-medium hover:bg-[#633426] hover:text-white transition">
-                  View Product
-                </button>
+                <Link to={`/product/${shoe.id}`}>
+                  <button className="mt-4 w-full border border-[#633426] text-[#633426] py-2 rounded-lg text-sm font-medium hover:bg-[#633426] hover:text-white transition">
+                    View Product
+                  </button>
+                </Link>
 
               </div>
             </SwiperSlide>
