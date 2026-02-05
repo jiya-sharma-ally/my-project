@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Nav />
-
+     
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/men/:category" element={<CategoryPage />} />
