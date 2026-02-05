@@ -22,7 +22,7 @@ const Hero = () => {
             Discover the perfect blend of style and comfort for your everyday wear.
           </p>
 
-          <button className="bg-black text-white px-6 md:px-8 py-3 rounded-md font-semibold hover:bg-gray-900 transition">
+          <button className="bg-black text-white px-6 md:px-8 py-3 rounded-md font-semibold hover:bg-gray-900 transition cursor-pointer">
             SHOP NOW →
           </button>
         </div>

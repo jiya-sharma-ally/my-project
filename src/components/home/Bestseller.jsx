@@ -128,7 +128,7 @@ const Bestseller = () => {
     className="absolute bottom-6 left-1/2 -translate-x-1/2
                bg-[#633426] text-white px-6 py-2 text-sm 
                opacity-0 group-hover:opacity-100
-               transition duration-300"
+               transition duration-300 cursor-pointer"
   >
     Quick Shop
   </button>

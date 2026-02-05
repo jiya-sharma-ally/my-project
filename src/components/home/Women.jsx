@@ -91,7 +91,7 @@ const Women = () => {
     className="w-10 h-10 rounded-full 
                bg-white text-black flex items-center justify-center
                shadow-md transition duration-300
-               hover:bg-[#633426] hover:text-white"
+               hover:bg-[#633426] hover:text-white cursor-pointer"
   >
     <IoCartOutline size={20} />
   </button>
@@ -114,7 +114,7 @@ const Women = () => {
                 </div>
 
                 {/* Image */}
-                <div className="h-full flex items-center justify-center p-6">
+                <div className="h-full flex items-center justify-center p-6 cursor-pointer">
                   <img
                     src={product.img}
                     alt={product.title}
@@ -133,7 +133,7 @@ const Women = () => {
                 {/* Action Button */}
                 <div className="absolute bottom-4 right-4 z-10">
                   <Link to={`/product/${product.id}`}>
-                    <button className="w-10 h-10 rounded-full bg-[#633426] text-white flex items-center justify-center hover:scale-105 transition">
+                    <button className="w-10 h-10 rounded-full bg-[#633426] text-white flex items-center justify-center hover:scale-105 transition cursor-pointer">
                       <MdArrowOutward />
                     </button>
                   </Link>

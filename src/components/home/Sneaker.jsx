@@ -97,7 +97,7 @@ const Sneaker = () => {
 
                 {/* Button */}
                 <Link to={`/product/${shoe.id}`}>
-                  <button className="mt-4 w-full border border-[#633426] text-[#633426] py-2 rounded-lg text-sm font-medium hover:bg-[#633426] hover:text-white transition">
+                  <button className="mt-4 w-full border border-[#633426] text-[#633426] py-2 rounded-lg text-sm font-medium hover:bg-[#633426] hover:text-white transition cursor-pointer">
                     View Product
                   </button>
                 </Link>
