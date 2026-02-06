@@ -5,6 +5,10 @@ import detail2 from "../assets/images/detail2.png";
 import detail3 from "../assets/images/detail3.png";
 import detail4 from "../assets/images/detail4.png";
 import SimilarProducts from "../components/details/similar";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowLeft } from "react-icons/md";
+
+
 
 const images = [detail1, detail2, detail3, detail4];
 const sizes = ["S", "M", "L", "XL", "XXL", "3XL"];
@@ -59,7 +63,8 @@ ${activeImg === img ? "border-black" : "border-transparent"}`}
                 }
                 className="absolute left-4 bg-white w-9 h-9 rounded-full shadow flex items-center justify-center cursor-pointer"
               >
-                ‹
+               <MdKeyboardArrowLeft />
+
               </button>
 
               {/* Right Arrow */}
@@ -71,7 +76,8 @@ ${activeImg === img ? "border-black" : "border-transparent"}`}
                 }
                 className="absolute right-4 bg-white w-9 h-9 rounded-full shadow flex items-center justify-center cursor-pointer"
               >
-                ›
+                <MdKeyboardArrowRight />
+
               </button>
 
             </div>

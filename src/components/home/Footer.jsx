@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import { FaRegCopyright } from "react-icons/fa";
+import { FaLongArrowAltRight } from "react-icons/fa";
+
+
 
 const Footer = () => {
   return (
@@ -101,14 +105,16 @@ const Footer = () => {
             </p>
 
             {/* Input */}
-            <div className="flex">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-4 py-2 text-white rounded-l-md outline-none"
-              />
-              <button className="bg-red-600 px-4 rounded-r-md">→</button>
-            </div>
+            <div className="flex border border-white/50 rounded-md overflow-hidden">
+  <input
+    type="email"
+    placeholder="Enter your email"
+    className="w-full px-4 py-2 text-white outline-none bg-transparent"
+  />
+  <button className="bg-red-600 px-4"><FaLongArrowAltRight />
+
+</button>
+</div>
 
             {/* Address */}
             <div className="mt-4 text-sm text-gray-300">
@@ -120,7 +126,8 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-500 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
-          <p>Copyright © 2023 Biztek. All Rights Reserved.</p>
+          <p>Copyright <FaRegCopyright />
+ 2023 Biztek. All Rights Reserved.</p>
           <div className="flex gap-6 mt-3 md:mt-0">
             <Link>Make an Enquiry</Link>
             <Link>Terms & Conditions</Link>
