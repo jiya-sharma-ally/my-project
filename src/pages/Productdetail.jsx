@@ -85,12 +85,12 @@ ${activeImg === img ? "border-black" : "border-transparent"}`}
 
           {/* RIGHT INFO AREA */}
           <div className="max-w-md">
-            <h1 className="text-2xl font-semibold mb-2">
+            <h1 className="text-2xl text-gray-500 mb-2">
               Nike ACG “Wolf Tree” Polartec
             </h1>
 
             <div className="flex items-center gap-2 text-sm mb-3">
-              <span className="font-semibold">₹2000</span>
+              <span className="font-semibold text-3xl ">₹2000</span>
               <span className="text-yellow-500">★ 5.0</span>
             </div>
 

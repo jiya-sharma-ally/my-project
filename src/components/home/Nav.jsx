@@ -29,7 +29,10 @@ const Nav = () => {
             <Link  onClick={() => scrollToSection("men")} className= " hover-underline">MEN</Link>
             <div className="absolute top-8 left-0 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
               <ul className="text-sm font-medium text-gray-700 min-w-[160px]">
-                <li className="px-4 py-2 hover:bg-gray-100">T-Shirts</li>
+                <Link to="/men/t-shirts">
+  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">T-Shirts</li>
+</Link>
+
                 <li className="px-4 py-2 hover:bg-gray-100">Oversized Tees</li>
                 <li className="px-4 py-2 hover:bg-gray-100">Sneakers</li>
               </ul>
