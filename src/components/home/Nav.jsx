@@ -7,11 +7,11 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const scrollToSection = (id) => {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-};
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav className="w-full border-b shadow-sm bg-[#f3e9dc]">
@@ -21,20 +21,20 @@ const Nav = () => {
 
         <img src={logo} alt="DripTees Logo" className="h-12 md:h-20" />
 
-   
+
         <ul className="hidden md:flex items-center gap-8 font-semibold text-lg tracking-wide list-none">
 
- 
+
           <li className="relative group cursor-pointer">
-            <Link  onClick={() => scrollToSection("men")} className= " hover-underline">MEN</Link>
+            <Link onClick={() => scrollToSection("men")} className=" hover-underline">MEN</Link>
             <div className="absolute top-8 left-0 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
               <ul className="text-sm font-medium text-gray-700 min-w-[160px]">
                 <Link to="/men/t-shirts">
-  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">T-Shirts</li>
-</Link>
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">T-Shirts</li>
+                </Link>
 
                 <li className="px-4 py-2 hover:bg-gray-100">Oversized Tees</li>
-                <li className="px-4 py-2 hover:bg-gray-100">Sneakers</li>
+               
               </ul>
             </div>
           </li>
@@ -44,38 +44,48 @@ const Nav = () => {
             <Link onClick={() => scrollToSection("women")} className="hover-underline">WOMEN</Link>
             <div className="absolute top-8 left-0 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
               <ul className="text-sm font-medium text-gray-700 min-w-[160px]">
-                <li className="px-4 py-2 hover:bg-gray-100">Crop Tees</li>
+                <Link to="/womenCat">
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    Crop Tees
+                  </li>
+                </Link>
                 <li className="px-4 py-2 hover:bg-gray-100">Oversized</li>
-                <li className="px-4 py-2 hover:bg-gray-100">Sneakers</li>
               </ul>
             </div>
           </li>
 
-         
+
           <li className="relative group cursor-pointer">
             <Link onClick={() => scrollToSection("sneaker")} className="hover-underline">SNEAKERS</Link>
             <div className="absolute top-8 left-0 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
               <ul className="text-sm font-medium text-gray-700 min-w-[160px]">
-                <li className="px-4 py-2 hover:bg-gray-100">Casual</li>
+
+                <Link to="/shoe">
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    Casual
+                  </li>
+                </Link>
+
+
                 <li className="px-4 py-2 hover:bg-gray-100">Minimal</li>
                 <li className="px-4 py-2 hover:bg-gray-100">Retro</li>
               </ul>
             </div>
           </li>
 
-         <li
-  onClick={() => scrollToSection("best-seller")}
-  className="hover-underline cursor-pointer"
->
-  BEST SELLER
-</li>
+          <li
+            onClick={() => scrollToSection("best-seller")}
+            className="hover-underline cursor-pointer"
+          >
+            BEST SELLER
+          </li>
 
-        <li
-  onClick={() => scrollToSection("new-arrivals")}
-  className="hover-underline cursor-pointer"
->
-  NEW ARRIVALS
-</li>
+          <li
+            onClick={() => scrollToSection("new-arrivals")}
+            className="hover-underline cursor-pointer"
+          >
+            NEW ARRIVALS
+          </li>
 
 
         </ul>
@@ -102,39 +112,39 @@ const Nav = () => {
             </span>
           </div>
 
-    <Link to="/cart" className="relative group cursor-pointer">
+          <Link to="/cart" className="relative group cursor-pointer">
 
-  <ShoppingCart size={20} />
+            <ShoppingCart size={20} />
 
-  <span className="absolute -top-2 -right-2 bg-[#633426] text-white 
+            <span className="absolute -top-2 -right-2 bg-[#633426] text-white 
                    text-[10px] w-4 h-4 flex items-center justify-center 
                    rounded-full">
-    2
-  </span>
+              2
+            </span>
 
 
-  <span className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap
+            <span className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap
                    bg-black text-white text-xs px-2 py-1 rounded
                    opacity-0 group-hover:opacity-100 transition">
-    Cart
-  </span>
-</Link>
+              Cart
+            </span>
+          </Link>
 
-    <div className="relative group cursor-pointer">
-  <User size={22} />
-  <div className="absolute top-full right-0 mt-2 w-44 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <div className="relative group cursor-pointer">
+            <User size={22} />
+            <div className="absolute top-full right-0 mt-2 w-44 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
 
-    <ul className="text-sm font-medium text-gray-700">
-      <li
-        onClick={() => setShowProfile(true)}
-        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-      >
-        My Profile
-      </li>
-    </ul>
+              <ul className="text-sm font-medium text-gray-700">
+                <li
+                  onClick={() => setShowProfile(true)}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
+                  My Profile
+                </li>
+              </ul>
 
-  </div>
-</div>
+            </div>
+          </div>
 
 
 
@@ -176,77 +186,77 @@ const Nav = () => {
           <li className="border-b pb-2">NEW ARRIVALS</li>
           <li className="border-b pb-2">
             <li className="border-b pb-2">
-  <Link to="/profile">My Profile</Link>
-</li>
+              <Link to="/profile">My Profile</Link>
+            </li>
 
           </li>
         </ul>
       </div>
       {showProfile && (
-  <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
 
-    <div className="w-[95%] max-w-5xl h-[420px] bg-white rounded-2xl overflow-hidden flex relative shadow-2xl">
-
-  
-      <button
-        onClick={() => setShowProfile(false)}
-        className="absolute top-4 right-4 text-black text-2xl z-10"
-      >
-        ✕
-      </button>
+          <div className="w-[95%] max-w-5xl h-[420px] bg-white rounded-2xl overflow-hidden flex relative shadow-2xl">
 
 
-      <div className="w-1/2 bg-black text-white flex flex-col justify-center items-center p-10">
-    <h1 className="text-5xl font-extrabold tracking-wider mb-6">
-  DRIPTEES
-</h1>
+            <button
+              onClick={() => setShowProfile(false)}
+              className="absolute top-4 right-4 text-black text-2xl z-10"
+            >
+              ✕
+            </button>
+
+
+            <div className="w-1/2 bg-black text-white flex flex-col justify-center items-center p-10">
+              <h1 className="text-5xl font-extrabold tracking-wider mb-6">
+                DRIPTEES
+              </h1>
 
 
 
-        <p className="text-xl text-center font-semibold">
-          Welcome! <br />
-          Register to avail the best deals!
-        </p>
-      </div>
+              <p className="text-xl text-center font-semibold">
+                Welcome! <br />
+                Register to avail the best deals!
+              </p>
+            </div>
 
 
-      <div className="w-1/2 flex flex-col justify-center px-12">
+            <div className="w-1/2 flex flex-col justify-center px-12">
 
-        <h2 className="text-2xl font-bold mb-2 text-center">
-          Login / Signup
-        </h2>
+              <h2 className="text-2xl font-bold mb-2 text-center">
+                Login / Signup
+              </h2>
 
-        <p className="text-center text-gray-500 mb-6">
-          Enter Mobile Number
-        </p>
+              <p className="text-center text-gray-500 mb-6">
+                Enter Mobile Number
+              </p>
 
-      
-        <div className="flex border rounded-lg overflow-hidden mb-6">
-          <div className="px-4 flex items-center border-r bg-gray-50">
-            🇮🇳 +91
+
+              <div className="flex border rounded-lg overflow-hidden mb-6">
+                <div className="px-4 flex items-center border-r bg-gray-50">
+                  🇮🇳 +91
+                </div>
+                <input
+                  type="text"
+                  placeholder="Enter Mobile Number"
+                  className="flex-1 px-4 py-3 outline-none"
+                />
+              </div>
+
+              <p className="text-xs text-center text-gray-400">
+                By logging in, you're agreeing to our{" "}
+                <span className="underline cursor-pointer">Privacy Policy</span>{" "}
+                and{" "}
+                <span className="underline cursor-pointer">Terms of Service</span>
+              </p>
+
+              <p className="text-center mt-4 text-sm text-blue-600 underline cursor-pointer">
+                Trouble logging in?
+              </p>
+
+            </div>
           </div>
-          <input
-            type="text"
-            placeholder="Enter Mobile Number"
-            className="flex-1 px-4 py-3 outline-none"
-          />
         </div>
-
-        <p className="text-xs text-center text-gray-400">
-          By logging in, you're agreeing to our{" "}
-          <span className="underline cursor-pointer">Privacy Policy</span>{" "}
-          and{" "}
-          <span className="underline cursor-pointer">Terms of Service</span>
-        </p>
-
-        <p className="text-center mt-4 text-sm text-blue-600 underline cursor-pointer">
-          Trouble logging in?
-        </p>
-
-      </div>
-    </div>
-  </div>
-)}
+      )}
 
     </nav>
   );
