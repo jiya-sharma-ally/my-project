@@ -91,7 +91,10 @@ const Bestseller = () => {
           {bestSellers.map((item) => (
            <SwiperSlide key={item.id}>
   <Link to={`/product/${item.id}`}>
-    <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group cursor-pointer">
+<div className="bg-white rounded-2xl overflow-hidden
+                border border-[##633426] hover:border-black/30
+                shadow-sm hover:shadow-lg
+                transition duration-300 group cursor-pointer">
 
   
 <div className="relative bg-white h-[320px] flex items-center justify-center group">
