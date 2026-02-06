@@ -72,12 +72,12 @@ const Bestseller = () => {
     <section className="w-full py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Title */}
+   
         <h2 className="text-4xl font-extrabold text-[#633426] mb-14">
                    Best Sellers
                 </h2>
 
-        {/* Slider */}
+    
         <Swiper
           modules={[Autoplay]}
           spaceBetween={24}
@@ -93,11 +93,9 @@ const Bestseller = () => {
   <Link to={`/product/${item.id}`}>
     <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group cursor-pointer">
 
-      {/* Image Section */}
-      {/* Image Section */}
+  
 <div className="relative bg-white h-[320px] flex items-center justify-center group">
 
-  {/* Heart Icon */}
   <button className="absolute top-3 right-3 text-xl z-10 
                    text-black hover:text-red-500 transition">
   <FaRegHeart />
@@ -105,7 +103,7 @@ const Bestseller = () => {
 
 
   <div className="relative h-[260px] w-full">
-  {/* Normal Image */}
+
   <img
     src={item.img}
     alt={item.title}
@@ -113,7 +111,7 @@ const Bestseller = () => {
                opacity-100 group-hover:opacity-0 transition duration-500"
   />
 
-  {/* Hover Image */}
+
   <img
     src={item.hoverImg}
     alt={item.title}
@@ -136,7 +134,7 @@ const Bestseller = () => {
 </div>
 
 
-      {/* Info Section */}
+
       <div className="p-4">
         <h3 className="text-sm font-semibold text-black leading-snug">
           {item.title}

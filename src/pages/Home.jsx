@@ -18,11 +18,21 @@ const Home = () => {
       <Hero />
       <Marquee />
       <Topcategories />
+      <section id="men">
       <Men  />
+      </section>
+      <section id="women">
       <Women  />
+      </section>
+      <section id="sneaker">
       <Sneaker />
+      </section>
+      <section id="new-arrivals">
       <Newarrival />
+      </section>
+      <section id="best-seller">
       <Bestseller />
+      </section>
  
       
     </>
