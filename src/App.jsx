@@ -7,6 +7,7 @@ import HomePage from "./pages/Home";
 import CategoryPage from "./pages/CategoryPage";
 import ProductDetail from "./pages/Productdetail";
 import ScrollToTop from "./components/details/Scrolltop";
+import Wishlist from "./pages/Wishlist";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
   <Route path="/" element={<HomePage />} />
   <Route path="/men/:category" element={<CategoryPage />} />
   <Route path="/product/:id" element={<ProductDetail />} />
-  <Route path="/cart" element={<Cart />} />   {/* 👈 ADD THIS */}
+  <Route path="/cart" element={<Cart />} />   
+  <Route path="/wishlist" element={<Wishlist />} />  
 </Routes>
 
 

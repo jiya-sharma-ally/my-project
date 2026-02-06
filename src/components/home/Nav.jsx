@@ -93,14 +93,14 @@ const Nav = () => {
             />
           </div>
 
-          <div className="relative group cursor-pointer">
+          <Link to="/wishlist" className="relative group cursor-pointer">
             <Heart size={20} />
             <span className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap
                    bg-black text-white text-xs px-2 py-1 rounded
                    opacity-0 group-hover:opacity-100 transition">
               Wishlist
             </span>
-          </div>
+          </Link>
 
     <Link to="/cart" className="relative group cursor-pointer">
 
