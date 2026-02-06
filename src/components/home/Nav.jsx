@@ -6,20 +6,27 @@ import { Link } from "react-router-dom";
 const Nav = () => {
   const [open, setOpen] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
+  const scrollToSection = (id) => {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
   return (
     <nav className="w-full border-b shadow-sm bg-[#f3e9dc]">
-      {/* TOP BAR */}
+
       <div className="flex items-center justify-between px-4 md:px-8 py-3">
 
-        {/* LEFT */}
+
         <img src={logo} alt="DripTees Logo" className="h-12 md:h-20" />
 
-        {/* CENTER (DESKTOP ONLY) */}
+   
         <ul className="hidden md:flex items-center gap-8 font-semibold text-lg tracking-wide list-none">
 
-          {/* MEN */}
+ 
           <li className="relative group cursor-pointer">
-            <span className="hover-underline">MEN</span>
+            <Link  onClick={() => scrollToSection("men")} className= " hover-underline">MEN</Link>
             <div className="absolute top-8 left-0 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
               <ul className="text-sm font-medium text-gray-700 min-w-[160px]">
                 <li className="px-4 py-2 hover:bg-gray-100">T-Shirts</li>
@@ -29,9 +36,9 @@ const Nav = () => {
             </div>
           </li>
 
-          {/* WOMEN */}
+
           <li className="relative group cursor-pointer">
-            <span className="hover-underline">WOMEN</span>
+            <Link onClick={() => scrollToSection("women")} className="hover-underline">WOMEN</Link>
             <div className="absolute top-8 left-0 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
               <ul className="text-sm font-medium text-gray-700 min-w-[160px]">
                 <li className="px-4 py-2 hover:bg-gray-100">Crop Tees</li>
@@ -41,9 +48,9 @@ const Nav = () => {
             </div>
           </li>
 
-          {/* SNEAKERS */}
+         
           <li className="relative group cursor-pointer">
-            <span className="hover-underline">SNEAKERS</span>
+            <Link onClick={() => scrollToSection("sneaker")} className="hover-underline">SNEAKERS</Link>
             <div className="absolute top-8 left-0 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
               <ul className="text-sm font-medium text-gray-700 min-w-[160px]">
                 <li className="px-4 py-2 hover:bg-gray-100">Casual</li>
@@ -53,16 +60,27 @@ const Nav = () => {
             </div>
           </li>
 
-          <li className="hover-underline cursor-pointer">BEST SELLER</li>
-          <li className="hover-underline cursor-pointer">NEW ARRIVALS</li>
+         <li
+  onClick={() => scrollToSection("best-seller")}
+  className="hover-underline cursor-pointer"
+>
+  BEST SELLER
+</li>
+
+        <li
+  onClick={() => scrollToSection("new-arrivals")}
+  className="hover-underline cursor-pointer"
+>
+  NEW ARRIVALS
+</li>
+
 
         </ul>
 
 
-        {/* RIGHT */}
+
         <div className="flex items-center gap-3 md:gap-4">
 
-          {/* Search (hide on very small screens if you want) */}
           <div className="hidden sm:flex items-center border rounded-full px-3 py-1 bg-white">
             <Search size={16} />
             <input
@@ -81,26 +99,24 @@ const Nav = () => {
             </span>
           </div>
 
-    <div className="relative group cursor-pointer">
-  {/* Cart Icon */}
+    <Link to="/cart" className="relative group cursor-pointer">
+
   <ShoppingCart size={20} />
 
-  {/* Badge */}
   <span className="absolute -top-2 -right-2 bg-[#633426] text-white 
                    text-[10px] w-4 h-4 flex items-center justify-center 
                    rounded-full">
-    3
+    2
   </span>
 
-  {/* Tooltip */}
+
   <span className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap
                    bg-black text-white text-xs px-2 py-1 rounded
                    opacity-0 group-hover:opacity-100 transition">
-              Cart
-            </span>
-          </div>
+    Cart
+  </span>
+</Link>
 
-{/* profile */}
     <div className="relative group cursor-pointer">
   <User size={22} />
   <div className="absolute top-full right-0 mt-2 w-44 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
@@ -119,7 +135,6 @@ const Nav = () => {
 
 
 
-          {/* HAMBURGER (MOBILE ONLY) */}
           <button
             className="md:hidden"
             onClick={() => setOpen(true)}
@@ -130,7 +145,7 @@ const Nav = () => {
         </div>
       </div>
 
-      {/* MOBILE MENU */}
+
       <div
         className={`fixed inset-0 bg-black/40 z-40 transition ${open ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
@@ -169,7 +184,7 @@ const Nav = () => {
 
     <div className="w-[95%] max-w-5xl h-[420px] bg-white rounded-2xl overflow-hidden flex relative shadow-2xl">
 
-      {/* Close Button */}
+  
       <button
         onClick={() => setShowProfile(false)}
         className="absolute top-4 right-4 text-black text-2xl z-10"
@@ -177,7 +192,7 @@ const Nav = () => {
         ✕
       </button>
 
-      {/* LEFT BLACK SECTION */}
+
       <div className="w-1/2 bg-black text-white flex flex-col justify-center items-center p-10">
     <h1 className="text-5xl font-extrabold tracking-wider mb-6">
   DRIPTEES
@@ -191,7 +206,7 @@ const Nav = () => {
         </p>
       </div>
 
-      {/* RIGHT FORM SECTION */}
+
       <div className="w-1/2 flex flex-col justify-center px-12">
 
         <h2 className="text-2xl font-bold mb-2 text-center">
@@ -202,7 +217,7 @@ const Nav = () => {
           Enter Mobile Number
         </p>
 
-        {/* Phone Input */}
+      
         <div className="flex border rounded-lg overflow-hidden mb-6">
           <div className="px-4 flex items-center border-r bg-gray-50">
             🇮🇳 +91
