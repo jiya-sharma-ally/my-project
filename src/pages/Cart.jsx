@@ -98,7 +98,7 @@ const Cart = () => {
     );
 
     return (
-        <section className="w-full min-h-screen bg-[#f6f6f6] py-12">
+        <section className="w-full mt-25 min-h-screen bg-[#f6f6f6] py-12">
             <div className="max-w-7xl mx-auto px-6">
 
 

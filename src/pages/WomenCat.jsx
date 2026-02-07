@@ -56,7 +56,7 @@ const WomenCat = () => {
     });
 
   return (
-    <section className="min-h-screen bg-[#fdf7f4] py-10">
+    <section className="min-h-screen mt-25 bg-[#fdf7f4] py-10">
       <div className="max-w-7xl mx-auto px-4">
 
         {/* BANNER */}

@@ -51,7 +51,7 @@ const Wishlist = () => {
   };
 
   return (
-    <section className="w-full bg-white py-10">
+    <section className="w-full mt-25 bg-white py-10">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}

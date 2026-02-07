@@ -23,7 +23,7 @@ const ProductDetail = () => {
 
   return (
     <>
-      <section className="w-full  py-12">
+      <section className="w-full  mt-25 py-12">
         <div className="max-w-350 mx-auto px-10 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20">
           {/* LEFT IMAGE AREA */}
           <div className="flex gap-6 self-start">
