@@ -43,18 +43,3 @@
     transform: translateX(-50%);
   }
 }
-/* globals.css / index.css / main.css */
-.offcanvas-scroll {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.offcanvas-scroll::-webkit-scrollbar {
-  display: none;
-}
-.hide-x-scroll {
-  scrollbar-width: none;
-}
-.hide-x-scroll::-webkit-scrollbar {
-  display: none;
-}

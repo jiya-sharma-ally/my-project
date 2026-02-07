@@ -13,32 +13,32 @@ const recommendations = [
     {
         id: 1,
         title: "Oversized Tee",
-        price: 154,
-        mrp: 499,
+        price: 799,
+        mrp: 1499,
         img: rec1,
         category: "All",
     },
     {
         id: 2,
         title: "Red Hoodie",
-        price: 100,
-        mrp: 200,
+        price: 999,
+        mrp: 2000,
         img: rec2,
         category: "Perfume",
     },
     {
         id: 3,
         title: "Sage White Tee",
-        price: 614,
-        mrp: 798,
+        price: 1399,
+        mrp: 1799,
         img: rec3,
         category: "Skin Care Combo",
     },
     {
         id: 4,
         title: "Classic Tee",
-        price: 192,
-        mrp: 275,
+        price: 399,
+        mrp: 999,
         img: rec4,
         category: "Home Gift Sets",
     },
@@ -155,7 +155,7 @@ const Cart = () => {
                                                 <div className="flex items-center border  overflow-hidden">
                                                     <button
                                                         onClick={() => decreaseQty(item.id)}
-                                                        className="px-3 py-1 hover:bg-gray-100"
+                                                        className="px-3 py-1 hover:bg-gray-100 cursor-pointer"
                                                     >
                                                         <HiMinusSmall />
                                                     </button>
@@ -166,7 +166,7 @@ const Cart = () => {
 
                                                     <button
                                                         onClick={() => increaseQty(item.id)}
-                                                        className="px-3 py-1 hover:bg-gray-100"
+                                                        className="px-3 py-1 hover:bg-gray-100 cursor-pointer"
                                                     >
                                                         <IoIosAdd />
                                                     </button>
@@ -175,12 +175,12 @@ const Cart = () => {
 
                                                 <button
                                                     onClick={() => removeItem(item.id)}
-                                                    className="text-md text-[#633426] hover:underline"
+                                                    className="text-md text-[#633426] hover:underline cursor-pointer"
                                                 >
                                                     Delete
                                                 </button>
 
-                                                <button className="text-md text-[#633426] hover:underline">
+                                                <button className="text-md text-[#633426] hover:underline cursor-pointer">
                                                     Save for later
                                                 </button>
 
@@ -208,7 +208,7 @@ const Cart = () => {
                                     className={`px-4 py-1 border rounded-full text-sm transition
                                                 ${activeFilter === item
                                             ? "bg-[#633426] text-white border-[#633426]"
-                                            : "hover:bg-[#633426] hover:text-white"
+                                            : "hover:bg-[#633426] hover:text-white cursor-pointer"
                                         }`}
                                 >
                                     {item}
@@ -225,7 +225,7 @@ const Cart = () => {
                                         key={item.id}
                                         className="bg-white p-5 rounded-xl hover:border
               transition
-             h-[320px] flex flex-col justify-between"
+             h-[320px] flex flex-col justify-between cursor-pointer"
                                     >
 
                                         <img
@@ -250,7 +250,7 @@ const Cart = () => {
                                         <button
                                             className="mt-3 w-full border border-[#633426]
                      text-[#633426] py-1.5 text-sm rounded
-                     hover:bg-[#633426] hover:text-white transition"
+                     hover:bg-[#633426] hover:text-white transition cursor-pointer"
                                         >
                                             ADD TO CART
                                         </button>
@@ -289,12 +289,14 @@ const Cart = () => {
                                 <span>₹{subtotal}</span>
                             </div>
 
-                            <button
-                                disabled={cartItems.length === 0}
-                                className="w-full bg-[#633426] text-white py-3 rounded-lg hover:opacity-90 transition disabled:opacity-50"
-                            >
-                                Proceed to Checkout
-                            </button>
+                            <Link to="/checkoutpage">
+                                <button
+                                    disabled={cartItems.length === 0}
+                                    className="w-full bg-[#633426] text-white py-3 rounded-lg hover:opacity-90 transition disabled:opacity-50 cursor-pointer"
+                                >
+                                    Proceed to Checkout
+                                </button>
+                            </Link>
                         </div>
                     </div>
 
