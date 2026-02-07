@@ -198,7 +198,7 @@ const Cart = () => {
                                 </div>
                             ))
                         )}
-                        {/* YOU MAY ALSO LIKE */}
+
                         {/* Filter Buttons */}
                         <div className="flex gap-3 mb-6 flex-wrap">
                             {["All", "Skin Care Combo", "Perfume", "Home Gift Sets"].map((item) => (
@@ -206,7 +206,7 @@ const Cart = () => {
                                     key={item}
                                     onClick={() => setActiveFilter(item)}
                                     className={`px-4 py-1 border rounded-full text-sm transition
-        ${activeFilter === item
+                                                ${activeFilter === item
                                             ? "bg-[#633426] text-white border-[#633426]"
                                             : "hover:bg-[#633426] hover:text-white"
                                         }`}

@@ -193,7 +193,7 @@ const Nav = () => {
         </ul>
       </div>
       {showProfile && (
-        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-[black]/60 flex items-center justify-center z-50">
 
           <div className="w-[95%] max-w-5xl h-[420px] bg-white rounded-2xl overflow-hidden flex relative shadow-2xl">
 
@@ -206,7 +206,7 @@ const Nav = () => {
             </button>
 
 
-            <div className="w-1/2 bg-black text-white flex flex-col justify-center items-center p-10">
+            <div className="w-1/2 bg-[#633426] text-white flex flex-col justify-center items-center p-10">
               <h1 className="text-5xl font-extrabold tracking-wider mb-6">
                 DRIPTEES
               </h1>
