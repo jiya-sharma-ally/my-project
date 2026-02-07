@@ -80,7 +80,7 @@ const CheckoutPage = () => {
       {/* 🎊 FULLSCREEN CONFETTI LAYER */}
       <div id="fullscreen-confetti" className="fullscreen-confetti" />
 
-      <div className="bg-gray-100 min-h-screen py-10">
+      <div className="bg-gray-100 mt-25 min-h-screen py-10">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
