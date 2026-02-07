@@ -175,7 +175,7 @@ const CategoryPage = () => {
                   <div key={p.id} className="bg-white rounded-xl shadow relative group flex flex-col">
 
                     {/* IMAGE CONTAINER: Aspect ratio is key for responsiveness */}
-                    <div className="relative aspect-[3/4] w-full overflow-hidden rounded-t-xl">
+                    <div className="relative aspect-3/4 w-full overflow-hidden rounded-t-xl">
                       <div className="absolute top-3 right-3 z-10 bg-white p-2 rounded-full shadow 
                                       cursor-pointer opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition">
                         <IoMdHeartEmpty className="text-xl text-black hover:text-red-500" />

@@ -69,12 +69,12 @@ const Wishlist = () => {
             {wishlistItems.map((item) => (
               <div
                 key={item.id}
-                className="border-[#633426] rounded-lg overflow-hidden relative shadow-sm hover:border transition"
+                className="border-[#633426] rounded-lg overflow-hidden relative shadow-sm hover:border transition cursor-pointer  "
               >
                 
                 <button
                   onClick={() => removeFromWishlist(item.id)}
-                  className="absolute top-2 right-2 bg-white rounded-full p-1 shadow hover:bg-gray-100"
+                  className="absolute top-2 right-2 bg-white rounded-full p-1 shadow hover:bg-gray-100 cursor-pointer"
                 >
                   <X size={14} />
                 </button>
@@ -107,7 +107,7 @@ const Wishlist = () => {
                   </div>
 
                   {/* Button */}
-                  <button className="w-full text-sm font-semibold text-[#633426] border-t pt-3 hover:text-teal-900">
+                  <button className="w-full text-sm font-semibold text-[#633426] border-t pt-3 hover:text-teal-900 cursor-pointer">
                     MOVE TO CART
                   </button>
                 </div>
