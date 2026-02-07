@@ -197,11 +197,12 @@ const CategoryPage = () => {
                       <p className="font-bold text-lg">₹{p.price}</p>
 
                       <div className="mt-auto">
-                        <Link to={`/Productdetail/${p.id}`}>
-                        <button className="mt-3 w-full bg-[#633426] text-white py-2.5 rounded-lg font-medium hover:bg-[#995d37] transition-colors cursor-pointer">
-                            View Product
-                          </button>
-                        </Link>
+                        <Link to={`/product/${p.id}`}>
+  <button className="mt-3 w-full bg-[#633426] text-white py-2.5 rounded-lg font-medium hover:bg-[#995d37] transition-colors cursor-pointer">
+    View Product
+  </button>
+</Link>
+
                       </div>
                     </div>
                   </div>

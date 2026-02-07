@@ -132,11 +132,12 @@ const Women = () => {
 
                 {/* Action Button */}
                 <div className="absolute bottom-4 right-4 z-10">
-                  <Link to={`/product/${product.id}`}>
-                    <button className="w-10 h-10 rounded-full bg-[#633426] text-white flex items-center justify-center hover:scale-105 transition cursor-pointer">
-                      <MdArrowOutward />
-                    </button>
-                  </Link>
+                  <Link to={`/women/${product.category}`}>
+  <button className="w-10 h-10 rounded-full bg-[#633426] text-white flex items-center justify-center hover:scale-105 transition cursor-pointer">
+    <MdArrowOutward />
+  </button>
+</Link>
+
                 </div>
               </div>
             </SwiperSlide>
