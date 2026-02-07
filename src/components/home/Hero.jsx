@@ -2,10 +2,10 @@ import model from "../../assets/images/hero-man.png";
 
 const Hero = () => {
   return (
-    <section className="w-full bg-[#be8866] py-14 md:py-20 flex items-center justify-center">
+    <section className="w-full bg-[#be8866] mt-25 py-14 md:py-20 flex items-center justify-center">
       <div className="w-full max-w-7xl flex flex-col-reverse md:flex-row items-center justify-between gap-12 px-6">
 
-        {/* LEFT SIDE - TEXT */}
+
         <div
           className="text-left text-[#633426] space-y-5 md:space-y-6 max-w-lg"
           data-aos="fade-right"

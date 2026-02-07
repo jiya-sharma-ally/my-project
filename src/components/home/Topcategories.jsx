@@ -5,10 +5,11 @@ import sneakers from "../../assets/images/sneakers.png";
 import { MdArrowForward } from "react-icons/md";
 
 const categories = [
-  { name: "Men’s Tops", img: men, category: "t-shirts" },
-  { name: "Women’s Tops", img: women, category: "tops" },
-  { name: "Sneakers", img: sneakers, category: "sneakers" },
+  { name: "Men’s Tops", img: men, path: "/men/t-shirts" },
+  { name: "Women’s Tops", img: women, path: "/womenCat" },
+  { name: "Sneakers", img: sneakers, path: "/shoe" },
 ];
+
 
 const Topcategories = () => {
   return (
@@ -23,7 +24,7 @@ const Topcategories = () => {
           {categories.map((cat, i) => (
   <Link
     key={i}
-    to={`/men/${cat.category}`}
+    to={cat.path}
     className="block"
   >
     <div className="relative h-[260px] sm:h-[320px] md:h-[400px] rounded-3xl overflow-hidden shadow-xl cursor-pointer group">

@@ -96,11 +96,12 @@ const Sneaker = () => {
                 </div>
 
                 {/* Button */}
-                <Link to={`/product/${shoe.id}`}>
+                <Link to="/shoe">
                   <button className="mt-4 w-full border border-[#633426] text-[#633426] py-2 rounded-lg text-sm font-medium hover:bg-[#633426] hover:text-white transition cursor-pointer">
                     View Product
                   </button>
                 </Link>
+
 
               </div>
             </SwiperSlide>
