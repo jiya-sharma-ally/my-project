@@ -322,15 +322,40 @@ SNEAKERS: {
 
         {/* Links */}
         <ul className="flex flex-col p-4 gap-4 font-medium text-gray-700">
-          <li className="border-b pb-2">MEN</li>
-          <li className="border-b pb-2">WOMEN</li>
-          <li className="border-b pb-2">SNEAKERS</li>
-          <li className="border-b pb-2">BEST SELLER</li>
-          <li className="border-b pb-2">NEW ARRIVALS</li>
+         <li className="border-b pb-2">
+          <Link to="/" onClick={() => setOpen(false)}>
+    ALL
+  </Link>
+         </li>
           <li className="border-b pb-2">
+  <Link to="/men/:category" onClick={() => setOpen(false)}>
+    MEN
+  </Link>
+</li>
+           <li className="border-b pb-2">
+          <Link to="/womencat" onClick={() => setOpen(false)}>
+    WOMEN
+  </Link>
+  </li>
+  <li className="border-b pb-2">
+ <Link to="/shoe" onClick={() => setOpen(false)}>
+SNEAKER
+  </Link>
+  </li>
+  <li className="border-b pb-2">
+ <Link to="/men/:category" onClick={() => setOpen(false)}>
+    NEW ARRIVALS
+  </Link>
+  </li>
+  <li className="border-b pb-2">
+ <Link to="/men/:category" onClick={() => setOpen(false)}>
+    BEST SELLER
+  </Link>
+  </li>
+          
             <li className="border-b pb-2">
               <Link to="/profile">My Profile</Link>
-            </li>
+         
 
           </li>
         </ul>

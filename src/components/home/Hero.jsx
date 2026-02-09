@@ -28,7 +28,8 @@ const Hero = () => {
         </div>
 
         {/* RIGHT SIDE - IMAGE */}
-        <div className="relative w-[260px] sm:w-[320px] md:w-[500px]">
+       <div className="relative w-[260px] sm:w-[320px] md:w-[500px] overflow-hidden">
+
 
           <div className="absolute top-3 left-3 w-full h-full bg-[#6f4e37] rounded-2xl rotate-[-6deg]"></div>
           <div className="absolute top-6 left-6 w-full h-full bg-[#c68c53] rounded-2xl rotate-[6deg]"></div>

@@ -59,7 +59,7 @@ const CategoryPage = () => {
       });
 
     return (
-      <section className="min-h-screen bg-[#fdf7f4] py-10 lg:py-20">
+      <section className="min-h-screen mt-25 bg-[#fdf7f4] py-10 lg:py-20">
         <div className="max-w-7xl mx-auto px-4">
 
           {/* BANNER: Responsive height and object-fit */}
