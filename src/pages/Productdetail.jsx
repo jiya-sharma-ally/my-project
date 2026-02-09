@@ -1,4 +1,9 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
+
+import { useState, useRef } from "react";
+
+
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 import detail1 from "../assets/images/detail1.png";
 import detail2 from "../assets/images/detail2.png";
@@ -15,18 +20,40 @@ const sizes = ["S", "M", "L", "XL", "XXL", "3XL"];
 const colors = ["#5b6cff", "#5f6d6a", "#CE3F3F", "#f2b6b6"];
 
 const ProductDetail = () => {
+  const [reviewRating, setReviewRating] = useState(0);
+const [reviewText, setReviewText] = useState("");
+const [reviewName, setReviewName] = useState("");
+
+  const reviewRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const activeImg = images[activeIndex];
   const [selectedSize, setSelectedSize] = useState("M");
   const [qty, setQty] = useState(1);
   const [activeColor, setActiveColor] = useState(colors[0]);
+  const renderStars = (rating, clickable = false) => {
+  return [...Array(5)].map((_, i) => {
+    const starValue = i + 1;
+    return (
+      <span
+        key={i}
+        onClick={clickable ? () => setReviewRating(starValue) : undefined}
+        className={`cursor-${clickable ? "pointer" : "default"} text-yellow-500`}
+      >
+        {starValue <= rating ? <FaStar /> : <FaRegStar />}
+      </span>
+    );
+  });
+};
+
 
   return (
     <>
       <section className="w-full  mt-25 py-12">
         <div className="max-w-350 mx-auto px-10 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20">
           {/* LEFT IMAGE AREA */}
-          <div className="flex gap-6 self-start">
+         {/* LEFT IMAGE AREA */}
+<div className="flex gap-6 self-start sticky top-28 h-fit">
+
 
             {/* Thumbnails */}
             <div className="flex flex-col gap-3">
@@ -53,32 +80,28 @@ ${activeImg === img ? "border-black" : "border-transparent"}`}
 
               />
 
-              {/* arrows (visual only) */}
-              {/* Left Arrow */}
+              
               <button
-                onClick={() =>
-                  setActiveIndex((prev) =>
-                    prev === 0 ? images.length - 1 : prev - 1
-                  )
-                }
-                className="absolute left-4 bg-white w-9 h-9 rounded-full shadow flex items-center justify-center cursor-pointer"
-              >
-               <MdKeyboardArrowLeft />
+  onClick={() =>
+    setActiveIndex((prev) =>
+      prev === 0 ? images.length - 1 : prev - 1
+    )
+  }
+  className="absolute left-4 w-9 h-9 opacity-0 pointer-events-none"
+>
+  <MdKeyboardArrowLeft />
+</button>
 
-              </button>
-
-              {/* Right Arrow */}
-              <button
-                onClick={() =>
-                  setActiveIndex((prev) =>
-                    prev === images.length - 1 ? 0 : prev + 1
-                  )
-                }
-                className="absolute right-4 bg-white w-9 h-9 rounded-full shadow flex items-center justify-center cursor-pointer"
-              >
-                <MdKeyboardArrowRight />
-
-              </button>
+<button
+  onClick={() =>
+    setActiveIndex((prev) =>
+      prev === images.length - 1 ? 0 : prev + 1
+    )
+  }
+  className="absolute right-4 w-9 h-9 opacity-0 pointer-events-none"
+>
+  <MdKeyboardArrowRight />
+</button>
 
             </div>
           </div>
@@ -91,7 +114,20 @@ ${activeImg === img ? "border-black" : "border-transparent"}`}
 
             <div className="flex items-center gap-2 text-sm mb-3">
               <span className="font-semibold text-3xl ">₹2000</span>
-              <span className="text-yellow-500">★ 5.0</span>
+             <div
+  onClick={() =>
+    reviewRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+  className="flex items-center gap-1 text-yellow-500 cursor-pointer hover:opacity-80"
+>
+  <FaStar />
+  <FaStar />
+  <FaStar />
+  <FaStar />
+  <FaStar />
+  <span className="text-sm ml-1 text-gray-500">(128)</span>
+</div>
+
             </div>
 
             <p className="text-sm text-gray-500 mb-6">
@@ -157,9 +193,12 @@ ${activeColor === color ? "ring-1 ring-black" : ""}`}
                 Buy now
               </button>
 
-              <button className="mt-4 w-full border border-[#633426] text-[#633426] py-2 rounded-lg text-sm font-medium hover:bg-[#633426] hover:text-white transition cursor-pointer">
-                Add to cart
-              </button>
+              <Link to="/cart" className="w-full">
+  <button className="mt-4 w-full border border-[#633426] text-[#633426] py-2 rounded-lg text-sm font-medium hover:bg-[#633426] hover:text-white transition cursor-pointer">
+    Add to cart
+  </button>
+</Link>
+
             </div>
 
             {/* ACCORDION */}
@@ -223,6 +262,179 @@ ${activeColor === color ? "ring-1 ring-black" : ""}`}
           </div>
         </div>
       </section>
+{/* REVIEWS SECTION */}
+<section
+  ref={reviewRef}
+  className="w-full bg-white py-16 border-t"
+>
+
+  <div className="max-w-6xl mx-auto px-6">
+
+    {/* Header */}
+    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
+      <h2 className="text-2xl font-bold text-[#633426]">Customer Reviews</h2>
+
+      <div className="flex items-center gap-2 mt-3 md:mt-0">
+        <span className="text-3xl font-semibold text-[#633426]">4.8</span>
+        <div className="flex text-yellow-500 ">
+  <FaStar />
+  <FaStar />
+  <FaStar />
+  <FaStar />
+  <FaStar />
+</div>
+
+        <span className="text-sm text-gray-500">(128 Reviews)</span>
+      </div>
+    </div>
+
+    {/* Reviews Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      {/* Review Card */}
+      <div className="border border-[#633426] rounded-lg p-6">
+        <div className="flex items-center justify-between mb-2">
+          <h4 className="font-semibold text-[#633426]">Rahul Sharma</h4>
+          <div className="flex text-yellow-500 ">
+  <FaStar />
+  <FaStar />
+  <FaStar />
+  <FaStar />
+  <FaStar />
+</div>
+
+        </div>
+        <p className="text-sm text-gray-600 mb-2">
+          Perfect fit and amazing quality. Totally worth the price!
+        </p>
+        <span className="text-xs text-gray-400">Verified Purchase</span>
+      </div>
+
+      <div className="border border-[#633426] rounded-lg p-6">
+        <div className="flex items-center justify-between mb-2">
+          <h4 className="font-semibold text-[#633426]">Anaya Verman</h4>
+          <div className="flex text-yellow-500 ">
+  <FaStar />
+  <FaStar />
+  <FaStar />
+  <FaStar />
+  <FaStar />
+</div>
+
+        </div>
+        <p className="text-sm text-gray-600 mb-2">
+          Loved the fabric and color. Delivery was fast as well.
+        </p>
+        <span className="text-xs text-gray-400">Verified Purchase</span>
+      </div>
+
+      <div className="border border-[#633426] rounded-lg p-6">
+        <div className="flex items-center justify-between mb-2">
+          <h4 className="font-semibold text-[#633426]">Amit Singh</h4>
+         <div className="flex text-yellow-500">
+  <FaStar />
+  <FaStar />
+  <FaStar />
+  <FaStar />
+  <FaStar />
+</div>
+
+        </div>
+        <p className="text-sm text-gray-600 mb-2">
+          Looks premium and feels super comfortable. Ordering again!
+        </p>
+        <span className="text-xs text-gray-400">Verified Purchase</span>
+      </div>
+
+      <div className="border border-[#633426] rounded-lg p-6">
+        <div className="flex items-center justify-between mb-2">
+          <h4 className="font-semibold text-[#633426]">Sneha Kapoor</h4>
+          <div className="flex text-yellow-500">
+  <FaStar />
+  <FaStar />
+  <FaStar />
+  <FaStar />
+  <FaStar />
+</div>
+
+
+        </div>
+        <p className="text-sm text-gray-600 mb-2">
+          Slightly loose but overall great product.
+        </p>
+        <span className="text-xs text-gray-400">Verified Purchase</span>
+      </div>
+
+    </div>
+    {/* WRITE A REVIEW */}
+<div className="mt-14 border border-[#633426] rounded-xl p-6 max-w-3xl mx-auto">
+  <h3 className="text-xl font-semibold mb-4">Write a Review</h3>
+
+  {/* Rating */}
+  <div className="mb-4">
+    <p className="text-sm font-medium mb-2">Your Rating</p>
+    <div className="flex gap-1">
+      {renderStars(reviewRating, true)}
+    </div>
+  </div>
+
+  {/* Name */}
+  <div className="mb-4">
+    <input
+      type="text"
+      placeholder="Your Name"
+      value={reviewName}
+      onChange={(e) => setReviewName(e.target.value)}
+      className="w-full border border-[#633426] px-4 py-2 rounded-md text-sm outline-none focus:border-black"
+    />
+  </div>
+
+  {/* Comment */}
+  <div className="mb-4">
+    <textarea
+      placeholder="Write your review here..."
+      rows={4}
+      value={reviewText}
+      onChange={(e) => setReviewText(e.target.value)}
+      className="w-full border border-[#633426] px-4 py-2 rounded-md text-sm outline-none resize-none focus:border-black"
+    />
+  </div>
+
+  {/* Submit */}
+  <button
+    onClick={() => {
+      if (!reviewRating || !reviewText) {
+        alert("Please add rating and review");
+        return;
+      }
+
+      console.log({
+        name: reviewName,
+        rating: reviewRating,
+        review: reviewText,
+      });
+
+      // reset
+      setReviewRating(0);
+      setReviewText("");
+      setReviewName("");
+    }}
+    className="px-6 py-3 bg-[#633426] text-white rounded-md text-sm font-medium hover:bg-gray-900 transition"
+  >
+    Submit Review
+  </button>
+</div>
+
+
+    {/* CTA */}
+    <div className="mt-10 text-center">
+      <button className="px-6 py-3 border border-[#633426] text-sm font-medium hover:bg-[#633426] hover:text-white transition">
+        View All Reviews
+      </button>
+    </div>
+
+  </div>
+</section>
 
       {/* Similar Products BELOW section */}
       <SimilarProducts />
