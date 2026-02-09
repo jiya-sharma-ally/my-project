@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Payment from "../components/cart/Payment.jsx";
 import Address from "../components/cart/Address.jsx";
+import Delivery from "../components/cart/Delivery.jsx";
 import wo1 from "../assets/images/wo1.png";
 import sneak1 from "../assets/images/sneak1.png";
 
@@ -13,6 +14,7 @@ const CheckoutPage = () => {
   const [coupon, setCoupon] = useState("");
   const [discount, setDiscount] = useState(0);
   const [couponApplied, setCouponApplied] = useState(false);
+  const [showLottie, setShowLottie] = useState(false); // ✅ REQUIRED
 
   const increaseQty = (id) => {
     setCart((prev) =>
@@ -40,48 +42,44 @@ const CheckoutPage = () => {
   const shipping = 6;
   const total = subtotal + shipping - discount;
 
-  // 🎉 FULL SCREEN CONFETTI
-  const launchConfetti = () => {
-    const container = document.getElementById("fullscreen-confetti");
-    if (!container) return;
-
-    for (let i = 0; i < 120; i++) {
-      const piece = document.createElement("div");
-      piece.className = "confetti-piece";
-
-      piece.style.left = Math.random() * 100 + "vw";
-      piece.style.backgroundColor = [
-        "#ff0",
-        "#ff5733",
-        "#33ff57",
-        "#3399ff",
-        "#ff33a8",
-        "#9b59b6",
-      ][Math.floor(Math.random() * 6)];
-
-      piece.style.animationDelay = Math.random() * 0.5 + "s";
-
-      container.appendChild(piece);
-
-      setTimeout(() => piece.remove(), 2000);
-    }
-  };
-
   const applyCoupon = () => {
     if (coupon === "SAVE10" && !couponApplied) {
       setDiscount(subtotal * 0.1);
       setCouponApplied(true);
-      launchConfetti(); // 🎊🔥 FULL SCREEN PARTY
+      setShowLottie(true);
+
+      setTimeout(() => {
+        setShowLottie(false);
+      }, 2500);
     }
   };
 
   return (
     <>
-      {/* 🎊 FULLSCREEN CONFETTI LAYER */}
-      <div id="fullscreen-confetti" className="fullscreen-confetti" />
+      {/* 🎉 LOTTIE CELEBRATION */}
+      {showLottie && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center ">
+          <iframe
+            src="https://lottie.host/embed/c0ba5fdc-793b-4076-9f17-01b91cd310d5/tFXMU37AOa.lottie"
+            className="w-800 h-800"
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+        </div>
+      )}
 
-      <div className="bg-gray-100 mt-25 min-h-screen py-10">
+      <div className="bg-gray-100 mt-24 min-h-screen py-10">
         <div className="max-w-6xl mx-auto px-4">
+
+          {/* STEPS */}
+          <div className="flex justify-center gap-6 mb-8 text-sm font-semibold">
+            <span className="text-gray-400">BAG</span>
+            <span className="text-gray-400">----------</span>
+            <span className="text-[#633426]">ADDRESS</span>
+            <span className="text-gray-400">----------</span>
+            <span className="text-gray-400">PAYMENT</span>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
             {/* LEFT */}
@@ -91,13 +89,17 @@ const CheckoutPage = () => {
               </div>
 
               <div className="bg-white rounded-xl p-8">
+                <Delivery />
+              </div>
+
+              <div className="bg-white rounded-xl p-8">
                 <Payment />
               </div>
             </div>
 
             {/* RIGHT CART */}
             <div className="lg:col-span-4">
-              <div className="sticky top-10 bg-white border border-gray-300 rounded-2xl p-5">
+              <div className="sticky top-24 bg-white border border-gray-300 rounded-2xl p-5">
 
                 <h3 className="text-sm font-semibold mb-4">
                   Products <span className="text-gray-400">({cart.length})</span>
@@ -119,9 +121,9 @@ const CheckoutPage = () => {
                     </div>
 
                     <div className="flex items-center gap-2 border rounded-full px-2 py-1 text-sm">
-                      <button onClick={() => decreaseQty(item.id)}>−</button>
+                      <button class="cursor-pointer" onClick={() => decreaseQty(item.id)}>−</button>
                       <span>{item.qty}</span>
-                      <button onClick={() => increaseQty(item.id)}>+</button>
+                      <button class="cursor-pointer" onClick={() => increaseQty(item.id)}>+</button>
                     </div>
                   </div>
                 ))}
@@ -138,7 +140,7 @@ const CheckoutPage = () => {
                   <button
                     onClick={applyCoupon}
                     disabled={couponApplied}
-                    className="px-4 py-2 text-xs border rounded-lg hover:border-black disabled:opacity-50"
+                    className="px-4 py-2 text-xs border rounded-lg hover:border-black disabled:opacity-50 cursor-pointer"
                   >
                     Apply
                   </button>
@@ -166,7 +168,7 @@ const CheckoutPage = () => {
                   <span>${total.toFixed(2)}</span>
                 </div>
 
-                <button className="w-full bg-[#633426] text-white py-3 rounded-full mt-5 hover:opacity-90">
+                <button className="w-full bg-[#633426] text-white py-3 rounded-full mt-5 hover:opacity-90 cursor-pointer">
                   PLACE ORDER
                 </button>
 

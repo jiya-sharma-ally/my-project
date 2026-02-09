@@ -12,6 +12,7 @@ import WomenCat from "./pages/WomenCat";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import Checkoutpage from "./pages/checkoutpage";
+import Delivery from "./components/cart/Delivery";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/women/:category" element={<WomenCat />} />
 \       <Route path="Checkoutpage" element={<Checkoutpage />} />
+        <Route path="delivery" element={<Delivery />} />
 \      </Routes>
 
       <Footer />

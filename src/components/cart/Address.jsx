@@ -117,22 +117,23 @@ const Address = () => {
                         />
                     </div>
 
-                    <div className="flex gap-3">
-                        <button
-                            type="button"
-                            className="bg-[#633426] text-white px-6 py-3 rounded-xl hover:opacity-90 transition cursor-pointer"
-                        >
-                            Save Address
-                        </button>
+                    <div className="flex gap-2">
+  <button
+    type="button"
+    className="bg-[#633426] text-white px-3 py-1.5 text rounded-lg hover:opacity-90 transition cursor-pointer"
+  >
+    Save Address
+  </button>
 
-                        <button
-                            type="button"
-                            onClick={() => setShowNewForm(false)}
-                            className="border border-gray-300 px-6 py-3 rounded-xl hover:border-black transition cursor-pointer"
-                        >
-                            Cancel
-                        </button>
-                    </div>
+  <button
+    type="button"
+    onClick={() => setShowNewForm(false)}
+    className="border border-gray-300 px-3 py-1.5 text rounded-lg hover:border-black transition cursor-pointer"
+  >
+    Cancel
+  </button>
+</div>
+
                 </div>
 
             )}

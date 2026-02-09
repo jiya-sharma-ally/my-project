@@ -5,7 +5,7 @@ import sneakers from "../../assets/images/sneakers.png";
 import { MdArrowForward } from "react-icons/md";
 
 const categories = [
-  { name: "Men’s Tops", img: men, path: "/men/t-shirts" },
+  { name: "Men’s Tshirts", img: men, path: "/men/t-shirts" },
   { name: "Women’s Tops", img: women, path: "/womenCat" },
   { name: "Sneakers", img: sneakers, path: "/shoe" },
 ];
