@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
-import men from "../../assets/images/men.png";
-import women from "../../assets/images/women.png";
+import wo1 from "../../assets/images/wo1.png";
 import sneakers from "../../assets/images/sneakers.png";
 import { MdArrowForward } from "react-icons/md";
+import cat1 from "../../assets/images/cat1.png";
+import sneak1 from "../../assets/images/sneak1.png";
 
 const categories = [
-  { name: "Men’s Tshirts", img: men, path: "/men/t-shirts" },
-  { name: "Women’s Tops", img: women, path: "/womenCat" },
-  { name: "Sneakers", img: sneakers, path: "/shoe" },
+  { name: "Men’s Tshirts", img: cat1, path: "/men/t-shirts" },
+  { name: "Women’s Tops", img: wo1, path: "/womenCat" },
+  { name: "Sneakers", img: sneak1, path: "/shoe" },
 ];
 
 

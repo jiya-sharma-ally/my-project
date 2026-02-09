@@ -266,7 +266,7 @@ ${activeColor === color ? "ring-1 ring-black" : ""}`}
       Ratings & Reviews
     </h2>
 
-    <button className="border border-[#633426] px-5 py-2 rounded-md text-sm font-medium hover:bg-[#633426] hover:text-white transition">
+    <button className="border border-[#633426] px-5 py-2 rounded-md text-sm font-medium hover:bg-[#633426] hover:text-white transition cursor-pointer">
       Rate Product
     </button>
   </div>
@@ -307,7 +307,7 @@ ${activeColor === color ? "ring-1 ring-black" : ""}`}
 
     {/* RIGHT: IMAGE GALLERY */}
     <div>
-     <div className="flex gap-3 justify-start">
+     <div className="flex gap-3 justify-start cursor-pointer">
   {images.slice(0, 3).map((img, i) => {
     const extraCount = images.length - 3;
 
@@ -319,7 +319,7 @@ ${activeColor === color ? "ring-1 ring-black" : ""}`}
         <img
           src={img}
           alt="review"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover cursor-pointer"
         />
 
         {/* Overlay only on LAST image */}
@@ -364,8 +364,8 @@ ${activeColor === color ? "ring-1 ring-black" : ""}`}
       </p>
 
       <div className="flex gap-3 mb-3">
-        <img src={detail1} className="h-16 w-16 rounded object-cover border" />
-        <img src={detail2} className="h-16 w-16 rounded object-cover border" />
+        <img src={detail1} className="h-16 w-16 rounded object-cover border cursor-pointer" />
+        <img src={detail2} className="h-16 w-16 rounded object-cover border cursor-pointer" />
       </div>
 
       <p className="text-xs text-gray-500">

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 
-import sneaker1 from "../../assets/images/sneaker1.png";
+import white from "../../assets/images/white.png";
 import sneaker2 from "../../assets/images/sneaker2.png";
 import sneaker3 from "../../assets/images/sneaker3.png";
 import sneaker4 from "../../assets/images/sneaker4.png";
@@ -17,7 +17,7 @@ const sneakers = [
     id: 1,
     name: "Air Street Runner",
     price: "₹7,499",
-    img: sneaker1,
+    img: white,
   },
   {
     id: 2,
@@ -65,6 +65,7 @@ const Sneaker = () => {
         <Swiper
           modules={[Autoplay]}
           spaceBetween={20}
+          loop={false}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           breakpoints={{
             0: { slidesPerView: 1.2 },
@@ -76,14 +77,14 @@ const Sneaker = () => {
             <SwiperSlide key={shoe.id}>
               <div className="bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer h-full">
 
-                {/* Image */}
-                <div className="h-[180px] flex items-center justify-center">
-                  <img
-                    src={shoe.img}
-                    alt={shoe.name}
-                    className="h-[150px] object-contain group-hover:-translate-y-2 transition duration-300"
-                  />
-                </div>
+               <div className="aspect-[3/4] w-full overflow-hidden">
+  <img
+    src={shoe.img}
+    alt={shoe.name}
+    className="h-full w-full object-cover"
+  />
+</div>
+
 
                 {/* Info */}
                 <div className="mt-4">
