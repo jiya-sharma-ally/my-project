@@ -13,12 +13,16 @@ import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import Checkoutpage from "./pages/checkoutpage";
 import Delivery from "./components/cart/Delivery";
+import About from "./pages/about";
+import Privacy from "./pages/Privacy";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
       <Nav />
+
 
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -31,6 +35,9 @@ function App() {
         <Route path="/women/:category" element={<WomenCat />} />
 \       <Route path="Checkoutpage" element={<Checkoutpage />} />
         <Route path="delivery" element={<Delivery />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/contact" element={<Contact />} />
 \      </Routes>
 
       <Footer />
