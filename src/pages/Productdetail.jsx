@@ -259,182 +259,147 @@ ${activeColor === color ? "ring-1 ring-black" : ""}`}
                 </p>
               </details>
             </div>
+           <section ref={reviewRef} className="pt-12 border-t">
+
+  {/* HEADER */}
+  <div className="flex items-center justify-between mb-8">
+    <h2 className="text-2xl font-bold text-[#633426]">
+      Ratings & Reviews
+    </h2>
+
+    <button className="border border-[#633426] px-5 py-2 rounded-md text-sm font-medium hover:bg-[#633426] hover:text-white transition">
+      Rate Product
+    </button>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10">
+
+    {/* LEFT: OVERALL RATING */}
+    <div>
+      <div className="text-5xl font-bold text-[#633426] flex items-center gap-2">
+        4.3 <FaStar className="text-yellow-500" />
+      </div>
+
+      <p className="text-sm text-gray-500 mt-2">
+        10,327 Ratings & <br /> 1,152 Reviews
+      </p>
+
+      {/* RATING BARS */}
+      <div className="mt-4 space-y-2">
+        {[5, 4, 3, 2, 1].map((star, i) => (
+          <div key={star} className="flex items-center gap-2 text-sm">
+            <span>{star}★</span>
+            <div className="w-full h-2 bg-gray-200 rounded">
+              <div
+                className={`h-2 rounded ${
+                  star >= 4
+                    ? "bg-green-500"
+                    : star === 3
+                    ? "bg-yellow-500"
+                    : "bg-red-500"
+                }`}
+                style={{ width: `${[60, 20, 10, 5, 5][i]}%` }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* RIGHT: IMAGE GALLERY */}
+    <div>
+     <div className="flex gap-3 justify-start">
+  {images.slice(0, 3).map((img, i) => {
+    const extraCount = images.length - 3;
+
+    return (
+      <div
+        key={i}
+        className="relative w-20 h-20 rounded-lg overflow-hidden border group"
+      >
+        <img
+          src={img}
+          alt="review"
+          className="w-full h-full object-cover"
+        />
+
+        {/* Overlay only on LAST image */}
+        {i === 2 && extraCount > 0 && (
+          <div className="
+            absolute inset-0
+            bg-black/60
+            text-white
+            flex items-center justify-center
+            text-sm font-semibold
+            opacity-0
+            group-hover:opacity-100
+            transition
+          ">
+            +{extraCount}
+          </div>
+        )}
+      </div>
+    );
+  })}
+</div>
+
+
+    </div>
+
+  </div>
+
+  {/* REVIEWS LIST */}
+  <div className="mt-10 space-y-8">
+
+    {/* REVIEW ITEM */}
+    <div className="border-b pb-6">
+      <div className="flex items-center gap-3 mb-2">
+        <span className="bg-green-600 text-white text-xs px-2 py-1 rounded">
+          5★
+        </span>
+        <h4 className="font-semibold">Terrific</h4>
+      </div>
+
+      <p className="text-sm text-gray-700 mb-3">
+        Best budget product 😍🔥
+      </p>
+
+      <div className="flex gap-3 mb-3">
+        <img src={detail1} className="h-16 w-16 rounded object-cover border" />
+        <img src={detail2} className="h-16 w-16 rounded object-cover border" />
+      </div>
+
+      <p className="text-xs text-gray-500">
+        Verified Buyer • Mar, 2023
+      </p>
+    </div>
+
+    <div className="border-b pb-6">
+      <div className="flex items-center gap-3 mb-2">
+        <span className="bg-green-600 text-white text-xs px-2 py-1 rounded">
+          4★
+        </span>
+        <h4 className="font-semibold">Good product</h4>
+      </div>
+
+      <p className="text-sm text-gray-700">
+        Quality is good for the price.
+      </p>
+
+      <p className="text-xs text-gray-500 mt-2">
+        Verified Buyer • Feb, 2023
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
           </div>
         </div>
       </section>
 {/* REVIEWS SECTION */}
-<section
-  ref={reviewRef}
-  className="w-full bg-white py-16 border-t"
->
 
-  <div className="max-w-6xl mx-auto px-6">
-
-    {/* Header */}
-    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
-      <h2 className="text-2xl font-bold text-[#633426]">Customer Reviews</h2>
-
-      <div className="flex items-center gap-2 mt-3 md:mt-0">
-        <span className="text-3xl font-semibold text-[#633426]">4.8</span>
-        <div className="flex text-yellow-500 ">
-  <FaStar />
-  <FaStar />
-  <FaStar />
-  <FaStar />
-  <FaStar />
-</div>
-
-        <span className="text-sm text-gray-500">(128 Reviews)</span>
-      </div>
-    </div>
-
-    {/* Reviews Grid */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-      {/* Review Card */}
-      <div className="border border-[#633426] rounded-lg p-6">
-        <div className="flex items-center justify-between mb-2">
-          <h4 className="font-semibold text-[#633426]">Rahul Sharma</h4>
-          <div className="flex text-yellow-500 ">
-  <FaStar />
-  <FaStar />
-  <FaStar />
-  <FaStar />
-  <FaStar />
-</div>
-
-        </div>
-        <p className="text-sm text-gray-600 mb-2">
-          Perfect fit and amazing quality. Totally worth the price!
-        </p>
-        <span className="text-xs text-gray-400">Verified Purchase</span>
-      </div>
-
-      <div className="border border-[#633426] rounded-lg p-6">
-        <div className="flex items-center justify-between mb-2">
-          <h4 className="font-semibold text-[#633426]">Anaya Verman</h4>
-          <div className="flex text-yellow-500 ">
-  <FaStar />
-  <FaStar />
-  <FaStar />
-  <FaStar />
-  <FaStar />
-</div>
-
-        </div>
-        <p className="text-sm text-gray-600 mb-2">
-          Loved the fabric and color. Delivery was fast as well.
-        </p>
-        <span className="text-xs text-gray-400">Verified Purchase</span>
-      </div>
-
-      <div className="border border-[#633426] rounded-lg p-6">
-        <div className="flex items-center justify-between mb-2">
-          <h4 className="font-semibold text-[#633426]">Amit Singh</h4>
-         <div className="flex text-yellow-500">
-  <FaStar />
-  <FaStar />
-  <FaStar />
-  <FaStar />
-  <FaStar />
-</div>
-
-        </div>
-        <p className="text-sm text-gray-600 mb-2">
-          Looks premium and feels super comfortable. Ordering again!
-        </p>
-        <span className="text-xs text-gray-400">Verified Purchase</span>
-      </div>
-
-      <div className="border border-[#633426] rounded-lg p-6">
-        <div className="flex items-center justify-between mb-2">
-          <h4 className="font-semibold text-[#633426]">Sneha Kapoor</h4>
-          <div className="flex text-yellow-500">
-  <FaStar />
-  <FaStar />
-  <FaStar />
-  <FaStar />
-  <FaStar />
-</div>
-
-
-        </div>
-        <p className="text-sm text-gray-600 mb-2">
-          Slightly loose but overall great product.
-        </p>
-        <span className="text-xs text-gray-400">Verified Purchase</span>
-      </div>
-
-    </div>
-    {/* WRITE A REVIEW */}
-<div className="mt-14 border border-[#633426] rounded-xl p-6 max-w-3xl mx-auto">
-  <h3 className="text-xl font-semibold mb-4">Write a Review</h3>
-
-  {/* Rating */}
-  <div className="mb-4">
-    <p className="text-sm font-medium mb-2">Your Rating</p>
-    <div className="flex gap-1">
-      {renderStars(reviewRating, true)}
-    </div>
-  </div>
-
-  {/* Name */}
-  <div className="mb-4">
-    <input
-      type="text"
-      placeholder="Your Name"
-      value={reviewName}
-      onChange={(e) => setReviewName(e.target.value)}
-      className="w-full border border-[#633426] px-4 py-2 rounded-md text-sm outline-none focus:border-black"
-    />
-  </div>
-
-  {/* Comment */}
-  <div className="mb-4">
-    <textarea
-      placeholder="Write your review here..."
-      rows={4}
-      value={reviewText}
-      onChange={(e) => setReviewText(e.target.value)}
-      className="w-full border border-[#633426] px-4 py-2 rounded-md text-sm outline-none resize-none focus:border-black"
-    />
-  </div>
-
-  {/* Submit */}
-  <button
-    onClick={() => {
-      if (!reviewRating || !reviewText) {
-        alert("Please add rating and review");
-        return;
-      }
-
-      console.log({
-        name: reviewName,
-        rating: reviewRating,
-        review: reviewText,
-      });
-
-      // reset
-      setReviewRating(0);
-      setReviewText("");
-      setReviewName("");
-    }}
-    className="px-6 py-3 bg-[#633426] text-white rounded-md text-sm font-medium hover:bg-gray-900 transition"
-  >
-    Submit Review
-  </button>
-</div>
-
-
-    {/* CTA */}
-    <div className="mt-10 text-center">
-      <button className="px-6 py-3 border border-[#633426] text-sm font-medium hover:bg-[#633426] hover:text-white transition">
-        View All Reviews
-      </button>
-    </div>
-
-  </div>
-</section>
 
       {/* Similar Products BELOW section */}
       <SimilarProducts />
