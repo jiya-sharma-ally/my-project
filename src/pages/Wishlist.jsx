@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { X } from "lucide-react";
+
+
 import img1 from "../assets/images/w1.png";
 import img2 from "../assets/images/w2.png";
 import img3 from "../assets/images/w3.png";
@@ -41,7 +43,19 @@ const initialWishlist = [
 ];
 
 const Wishlist = () => {
+  const [showToast, setShowToast] = useState(false);
+const [toastMessage, setToastMessage] = useState("Added to cart");
   const [wishlistItems, setWishlistItems] = useState(initialWishlist);
+const moveToCart = (item) => {
+ 
+  setToastMessage(`${item.title} added to cart`);
+  setShowToast(true);
+
+  
+  setTimeout(() => {
+    setShowToast(false);
+  }, 2500);
+};
 
 
   const removeFromWishlist = (id) => {
@@ -107,15 +121,27 @@ const Wishlist = () => {
                   </div>
 
                   {/* Button */}
-                  <button className="w-full text-sm font-semibold text-[#633426] border-t pt-3 hover:text-teal-900 cursor-pointer">
-                    MOVE TO CART
-                  </button>
+                  <button
+  onClick={() => moveToCart(item)}
+  className="w-full text-sm font-semibold text-[#633426] border-t pt-3 hover:text-teal-900 cursor-pointer"
+>
+  MOVE TO CART
+</button>
+
                 </div>
               </div>
             ))}
           </div>
         )}
       </div>
+      {showToast && (
+  <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+    <div className="bg-black text-white px-5 py-3 rounded-md shadow-lg text-sm animate-slide-up">
+      {toastMessage}
+    </div>
+  </div>
+)}
+
     </section>
   );
 };
