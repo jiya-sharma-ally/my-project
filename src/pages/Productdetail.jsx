@@ -50,9 +50,8 @@ const [reviewName, setReviewName] = useState("");
     <>
       <section className="w-full  mt-25 py-12">
         <div className="max-w-350 mx-auto px-10 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20">
-          {/* LEFT IMAGE AREA */}
-         {/* LEFT IMAGE AREA */}
-<div className="flex gap-6 self-start sticky top-28 h-fit">
+          
+<div className="flex gap-6 self-start lg:sticky lg:top-28 h-fit">
 
 
             {/* Thumbnails */}

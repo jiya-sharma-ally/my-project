@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import { FaRegCopyright } from "react-icons/fa";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { useState } from "react";
 
 
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
   return (
     <footer className="bg-[#633426] text-white pt-16 pb-6">
       <div className="max-w-7xl mx-auto px-6">
@@ -105,16 +108,30 @@ const Footer = () => {
             </p>
 
             {/* Input */}
-            <div className="flex border border-white/50 rounded-md overflow-hidden">
+         <div className="flex border border-white/50 rounded-md overflow-hidden">
   <input
     type="email"
     placeholder="Enter your email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
     className="w-full px-4 py-2 text-white outline-none bg-transparent"
   />
-  <button className="bg-red-600 px-4"><FaLongArrowAltRight />
 
-</button>
+  <button
+    onClick={() => {
+      if (!email) {
+        alert("Please enter your email");
+        return;
+      }
+
+      window.location.href = `mailto:support@driptees.com?subject=Newsletter Subscription&body=My email is: ${email}`;
+    }}
+    className="bg-red-600 px-4 flex items-center justify-center hover:bg-red-700 transition"
+  >
+    <FaLongArrowAltRight />
+  </button>
 </div>
+
 
             {/* Address */}
             <div className="mt-4 text-sm text-gray-300">
