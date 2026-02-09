@@ -175,12 +175,16 @@ const Similar = () => {
                             className="w-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition duration-500"
                         />
 
+                        
                        
                         <div className="absolute top-3 right-[-60px] group-hover:right-3 transition-all duration-500">
+                            
                             <div className="relative group/cart">
+                        
                                 <div className="bg-white p-2 rounded-full shadow-lg cursor-pointer">
                                     <BsCart size={18} />
                                 </div>
+                                
 
                                 <span
                                     className="absolute right-12 top-1/2 -translate-y-1/2

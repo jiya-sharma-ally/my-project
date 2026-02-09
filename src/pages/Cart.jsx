@@ -17,6 +17,7 @@ const recommendations = [
         mrp: 1499,
         img: rec1,
         category: "All",
+          path: "/womenCat"
     },
     {
         id: 2,
@@ -25,6 +26,7 @@ const recommendations = [
         mrp: 2000,
         img: rec2,
         category: "Perfume",
+          path: "/men/t-shirts"
     },
     {
         id: 3,
@@ -33,6 +35,7 @@ const recommendations = [
         mrp: 1799,
         img: rec3,
         category: "Skin Care Combo",
+          path: "/shoe" 
     },
     {
         id: 4,
@@ -41,6 +44,7 @@ const recommendations = [
         mrp: 999,
         img: rec4,
         category: "Home Gift Sets",
+          path: "/men/t-shirts"
     },
 ];
 
@@ -126,12 +130,13 @@ const Cart = () => {
                                 >
                                     <div className="flex gap-6">
 
-
-                                        <img
-                                            src={item.img}
-                                            alt={item.name}
-                                            className="w-32 h-32 object-cover"
-                                        />
+                                          <Link to={`/men/:category${item.id}`}>
+  <img
+    src={item.img}
+    alt={item.name}
+    className="w-32 h-32 object-cover cursor-pointer"
+  />
+</Link>
 
 
                                         <div className="flex-1">
@@ -246,14 +251,17 @@ const Cart = () => {
                                                 ₹{item.mrp}
                                             </span>
                                         </div>
+                                        
+                                        <Link to={item.path || `/product/${item.id}`}>
+  <button
+    className="mt-3 w-full border border-[#633426]
+    text-[#633426] py-1.5 text-sm rounded
+    hover:bg-[#633426] hover:text-white transition"
+  >
+    VIEW PRODUCT
+  </button>
+</Link>
 
-                                        <button
-                                            className="mt-3 w-full border border-[#633426]
-                     text-[#633426] py-1.5 text-sm rounded
-                     hover:bg-[#633426] hover:text-white transition cursor-pointer"
-                                        >
-                                            ADD TO CART
-                                        </button>
                                     </div>
                                 ))}
                             </div>

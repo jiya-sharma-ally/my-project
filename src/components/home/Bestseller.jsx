@@ -28,6 +28,7 @@ const bestSellers = [
     price: "₹3,199",
     img: men1,
     hoverImg: men1Hover,
+     path: "/men/t-shirts"
   },
   {
     id: 2,
@@ -35,6 +36,7 @@ const bestSellers = [
     price: "₹3,799",
     img: women1,
     hoverImg: women1Hover,
+    path: "/womenCat"
   },
   {
     id: 3,
@@ -42,6 +44,7 @@ const bestSellers = [
     price: "₹8,499",
     img: sneaker1,
     hoverImg: sneaker1Hover,
+     path: "/shoe" 
   },
   {
    id: 4,
@@ -49,6 +52,7 @@ const bestSellers = [
     price: "₹8,499",
     img: sneaker2,
     hoverImg: men2Hover,
+    path: "/men/t-shirts"
   },
    {
    id: 5,
@@ -56,6 +60,7 @@ const bestSellers = [
     price: "₹8,499",
     img: men2,
     hoverImg: women2Hover,
+    path: "/womenCat"
   },
    {
    id: 6,
@@ -63,6 +68,7 @@ const bestSellers = [
     price: "₹8,499",
     img: women2,
     hoverImg: sneaker2Hover,
+      path: "/shoe" 
   }
 ];
 
@@ -90,7 +96,7 @@ const Bestseller = () => {
         >
           {bestSellers.map((item) => (
            <SwiperSlide key={item.id}>
-  <Link to={`/product/${item.id}`}>
+  <Link to={item.path}>
 <div className="bg-white rounded-2xl overflow-hidden
                 border border-[##633426] hover:border-black/30
                 shadow-sm hover:shadow-lg

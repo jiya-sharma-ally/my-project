@@ -114,6 +114,7 @@ const Women = () => {
                 </div>
 
                 {/* Image */}
+                <Link to="/women/:category">
                 <div className="h-full flex items-center justify-center p-6 cursor-pointer">
                   <img
                     src={product.img}
@@ -121,6 +122,7 @@ const Women = () => {
                     className="h-[260px] object-contain group-hover:scale-105 transition duration-500"
                   />
                 </div>
+                </Link>
 
                 {/* Info */}
                 <div className="absolute bottom-4 left-4 z-10">
