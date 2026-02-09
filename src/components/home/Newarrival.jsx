@@ -7,7 +7,7 @@ import { Heart } from "lucide-react";
 import "swiper/css";
 
 /* Images */
-import men1 from "../../assets/images/men1.png";
+import polo from "../../assets/images/polo.png";
 import women1 from "../../assets/images/women1.png";
 import sneaker1 from "../../assets/images/sneaker1.png";
 import men2 from "../../assets/images/men2.png";
@@ -22,7 +22,7 @@ const newArrivals = [
         category: "Men",
         price: "₹2,999",
         rating: "4.5",
-        img: men1,
+        img: polo,
     },
     {
         id: 2,
@@ -111,13 +111,14 @@ const Newarrival = () => {
                                     {/* Category Badge */}
 
                                     {/* Image */}
-                                    <div className="h-[200px] flex items-center justify-center mt-4">
+                                    <div className="aspect-[3/4] w-full overflow-hidden">
                                         <img
                                             src={item.img}
                                             alt={item.title}
-                                            className="h-[160px] object-contain group-hover:-translate-y-2 transition duration-300"
+                                            className="h-full w-full object-cover"
                                         />
                                     </div>
+
 
                                     {/* Info */}
                                     <div className="mt-4">

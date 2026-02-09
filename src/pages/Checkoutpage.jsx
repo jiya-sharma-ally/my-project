@@ -14,7 +14,7 @@ const CheckoutPage = () => {
   const [coupon, setCoupon] = useState("");
   const [discount, setDiscount] = useState(0);
   const [couponApplied, setCouponApplied] = useState(false);
-  const [showLottie, setShowLottie] = useState(false); // ✅ REQUIRED
+  const [showLottie, setShowLottie] = useState(false);  
 
   const increaseQty = (id) => {
     setCart((prev) =>
@@ -58,7 +58,7 @@ const CheckoutPage = () => {
     <>
       {/* 🎉 LOTTIE CELEBRATION */}
       {showLottie && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center ">
+        <div className="fixed inset-0 z-9999 flex items-center justify-center ">
           <iframe
             src="https://lottie.host/embed/c0ba5fdc-793b-4076-9f17-01b91cd310d5/tFXMU37AOa.lottie"
             className="w-800 h-800"

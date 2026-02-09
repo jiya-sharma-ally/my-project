@@ -1,20 +1,20 @@
 import { Link } from "react-router-dom";
 import { MdArrowForward } from "react-icons/md";
 
-import men1 from "../../assets/images/men1.png";
+import polo from "../../assets/images/polo.png";
 import men2 from "../../assets/images/men2.png";
-import men3 from "../../assets/images/menc.png";
-import men4 from "../../assets/images/men4.png";
-import men5 from "../../assets/images/men5.png";
-import men6 from "../../assets/images/men6.png";
+import gym from "../../assets/images/gym.png";
+import over from "../../assets/images/over.png";
+import printed from "../../assets/images/printed.png";
+import full from "../../assets/images/full.png";
 
 const menCards = [
-  { id: 1, title: "Polo T-Shirts", bg: "bg-[#c5b5a6]", img: men1, category: "polo-tshirts" },
+  { id: 1, title: "Polo T-Shirts", bg: "bg-[#c5b5a6]", img: polo, category: "polo-tshirts" },
   { id: 2, title: "Regular Fits", bg: "bg-[#deac76]", img: men2, category: "regular-fits" },
-  { id: 3, title: "Boat Necks", bg: "bg-[#e8c5a5]", img: men3, category: "boat-necks" },
-  { id: 4, title: "Oversized Tees", bg: "bg-[#d6cfc4]", img: men4, category: "oversized-tees" },
-  { id: 5, title: "Printed Tees", bg: "bg-[#c9b8a1]", img: men5, category: "printed-tees" },
-  { id: 6, title: "Full Sleeves", bg: "bg-[#e1bfa3]", img: men6, category: "full-sleeves" },
+  { id: 3, title: "Gym fits", bg: "bg-[#e8c5a5]", img: gym, category: "boat-necks" },
+  { id: 4, title: "Oversized Tees", bg: "bg-[#d6cfc4]", img: over, category: "oversized-tees" },
+  { id: 5, title: "Printed Tees", bg: "bg-[#c9b8a1]", img: printed, category: "printed-tees" },
+  { id: 6, title: "Full Sleeves", bg: "bg-[#e1bfa3]", img: full, category: "full-sleeves" },
 ];
 
 
