@@ -93,12 +93,15 @@ const moveToCart = (item) => {
                   <X size={14} />
                 </button>
 
-              
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-full h-64 object-cover"
-                />
+             
+  <img
+    src={item.img}
+    alt={item.title}
+    className="w-full h-64 object-cover cursor-pointer"
+  />
+
+
+
 
                 {/* Content */}
                 <div className="p-4">

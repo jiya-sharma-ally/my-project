@@ -34,14 +34,14 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/women/:category" element={<WomenCat />} />
-\       <Route path="Checkoutpage" element={<Checkoutpage />} />
+       <Route path="Checkoutpage" element={<Checkoutpage />} />
         <Route path="delivery" element={<Delivery />} />
         <Route path="/rating" element={<Rating/>} />
 
         <Route path="/about" element={<About />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/contact" element={<Contact />} />
-\      </Routes>
+      </Routes>
 
       <Footer />
     </BrowserRouter>
