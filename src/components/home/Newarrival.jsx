@@ -23,6 +23,7 @@ const newArrivals = [
         price: "₹2,999",
         rating: "4.5",
         img: polo,
+        path: "/men/t-shirts"
     },
     {
         id: 2,
@@ -31,6 +32,7 @@ const newArrivals = [
         price: "₹3,499",
         rating: "4.7",
         img: women1,
+         path: "/womenCat"
     },
     {
         id: 3,
@@ -39,6 +41,7 @@ const newArrivals = [
         price: "₹7,999",
         rating: "4.8",
         img: sneaker1,
+        path: "/shoe" 
     },
     {
         id: 4,
@@ -47,6 +50,7 @@ const newArrivals = [
         price: "₹3,299",
         rating: "4.6",
         img: men2,
+        path: "/men/t-shirts"
     },
     {
         id: 5,
@@ -55,6 +59,7 @@ const newArrivals = [
         price: "₹4,199",
         rating: "4.4",
         img: women2,
+          path: "/womenCat"
     },
     {
         id: 6,
@@ -63,6 +68,7 @@ const newArrivals = [
         price: "₹6,999",
         rating: "4.5",
         img: sneaker2,
+         path: "/shoe" 
     },
 ];
 
@@ -87,61 +93,38 @@ const Newarrival = () => {
                         1024: { slidesPerView: 4 },
                     }}
                 >
-                    {newArrivals.map((item) => (
-                        <SwiperSlide key={item.id}>
-                            <Link to={`/product/${item.id}`}>
-                                <div className="relative bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer h-full overflow-hidden">
-                                    {/* 50% OFF Ribbon */}
-                                    {/* 50% OFF Ribbon */}
-                                    <div className="absolute top-4 left-[-34px] rotate-[-45deg] bg-[#633426] text-white text-[10px] font-bold px-10 py-1 tracking-wider z-20">
-                                        50% OFF
-                                    </div>
-                                    {/* Wishlist Button */}
-                                    <button
-                                        className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full border border-gray-300 bg-white flex items-center justify-center
-                                        hover:bg-[#633426] hover:border-[#633426] transition group/heart"
-                                    >
-                                        <Heart
-                                            size={16}
-                                            className="text-gray-700 group-hover/heart:text-white transition"
-                                        />
-                                    </button>
+                   {newArrivals.map((item) => (
+  <SwiperSlide key={item.id}>
+    <Link to={item.path}>
+      <div className="relative bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer h-full overflow-hidden">
 
+        <div className="absolute top-4 left-[-34px] rotate-[-45deg] bg-[#633426] text-white text-[10px] font-bold px-10 py-1 tracking-wider z-20">
+          50% OFF
+        </div>
 
-                                    {/* Category Badge */}
+        <button className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full border bg-white flex items-center justify-center hover:bg-[#633426] transition">
+          <Heart size={16} />
+        </button>
 
-                                    {/* Image */}
-                                    <div className="aspect-[3/4] w-full overflow-hidden">
-                                        <img
-                                            src={item.img}
-                                            alt={item.title}
-                                            className="h-full w-full object-cover"
-                                        />
-                                    </div>
+        <div className="aspect-[3/4] w-full overflow-hidden">
+          <img src={item.img} alt={item.title} className="h-full w-full object-cover" />
+        </div>
 
+        <div className="mt-4">
+          <h3 className="text-sm font-semibold">{item.title}</h3>
+          <div className="flex items-center justify-between mt-2">
+            <p className="text-lg font-bold text-[#633426]">{item.price}</p>
+            <div className="flex items-center gap-1 text-yellow-500">
+              <FaStar /> {item.rating}
+            </div>
+          </div>
+        </div>
 
-                                    {/* Info */}
-                                    <div className="mt-4">
-                                        <h3 className="text-sm font-semibold text-gray-800">
-                                            {item.title}
-                                        </h3>
+      </div>
+    </Link>
+  </SwiperSlide>
+))}
 
-                                        <div className="flex items-center justify-between mt-2">
-                                            <p className="text-lg font-bold text-[#633426]">
-                                                {item.price}
-                                            </p>
-
-                                            <div className="flex items-center gap-1 text-sm text-yellow-500">
-                                                <FaStar />
-                                                {item.rating}
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                    ))}
                 </Swiper>
 
             </div>

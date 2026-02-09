@@ -76,7 +76,7 @@ const Sneaker = () => {
           {sneakers.map((shoe) => (
             <SwiperSlide key={shoe.id}>
               <div className="bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer h-full">
-
+                <Link to="/shoe">
                <div className="aspect-[3/4] w-full overflow-hidden">
   <img
     src={shoe.img}
@@ -84,6 +84,7 @@ const Sneaker = () => {
     className="h-full w-full object-cover"
   />
 </div>
+</Link>
 
 
                 {/* Info */}

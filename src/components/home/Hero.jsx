@@ -1,4 +1,6 @@
 import model from "../../assets/images/hero-man.png";
+import { Link } from "react-router-dom";
+
 
 const Hero = () => {
   return (
@@ -22,24 +24,28 @@ const Hero = () => {
             Discover the perfect blend of style and comfort for your everyday wear.
           </p>
 
-          <button className="bg-black text-white px-6 md:px-8 py-3 rounded-md font-semibold hover:bg-gray-900 transition cursor-pointer">
-            SHOP NOW →
-          </button>
+         <Link to="/men/:category">
+  <button className="bg-black text-white px-6 md:px-8 py-3 rounded-md font-semibold hover:bg-gray-900 transition cursor-pointer">
+    SHOP NOW →
+  </button>
+</Link>
+
         </div>
 
         {/* RIGHT SIDE - IMAGE */}
-       <div className="relative w-[260px] sm:w-[320px] md:w-[500px] ">
+      <Link to="/men/:category" className="block">
+  <div className="relative w-[260px] sm:w-[320px] md:w-[500px] cursor-pointer">
+    <div className="absolute top-3 left-3 w-full h-full bg-[#6f4e37] rounded-2xl rotate-[-6deg]"></div>
+    <div className="absolute top-6 left-6 w-full h-full bg-[#c68c53] rounded-2xl rotate-[6deg]"></div>
 
+    <img
+      src={model}
+      alt="Hero Model"
+      className="relative w-full rounded-2xl shadow-2xl"
+    />
+  </div>
+</Link>
 
-          <div className="absolute top-3 left-3 w-full h-full bg-[#6f4e37] rounded-2xl rotate-[-6deg]"></div>
-          <div className="absolute top-6 left-6 w-full h-full bg-[#c68c53] rounded-2xl rotate-[6deg]"></div>
-
-          <img
-            src={model}
-            alt="Hero Model"
-            className="relative w-full rounded-2xl shadow-2xl"
-          />
-        </div>
       </div>
     </section>
   );
