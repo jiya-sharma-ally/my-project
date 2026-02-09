@@ -164,7 +164,7 @@ SNEAKERS: {
                  opacity-0 invisible group-hover:opacity-100
                  group-hover:visible transition"
               >
-                <ul className="text-sm font-medium text-gray-700 min-w-[160px]">
+                <ul className="text-sm font-medium text-gray-700 min-w-160px">
                   <Link to="/men/t-shirts">
                     <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
                       T-Shirts
