@@ -58,10 +58,10 @@ const CheckoutPage = () => {
     <>
       {/* 🎉 LOTTIE CELEBRATION */}
       {showLottie && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/10">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center ">
           <iframe
             src="https://lottie.host/embed/c0ba5fdc-793b-4076-9f17-01b91cd310d5/tFXMU37AOa.lottie"
-            className="w-80 h-80"
+            className="w-800 h-800"
             frameBorder="0"
             allowFullScreen
           ></iframe>
@@ -121,9 +121,9 @@ const CheckoutPage = () => {
                     </div>
 
                     <div className="flex items-center gap-2 border rounded-full px-2 py-1 text-sm">
-                      <button onClick={() => decreaseQty(item.id)}>−</button>
+                      <button class="cursor-pointer" onClick={() => decreaseQty(item.id)}>−</button>
                       <span>{item.qty}</span>
-                      <button onClick={() => increaseQty(item.id)}>+</button>
+                      <button class="cursor-pointer" onClick={() => increaseQty(item.id)}>+</button>
                     </div>
                   </div>
                 ))}
@@ -140,7 +140,7 @@ const CheckoutPage = () => {
                   <button
                     onClick={applyCoupon}
                     disabled={couponApplied}
-                    className="px-4 py-2 text-xs border rounded-lg hover:border-black disabled:opacity-50"
+                    className="px-4 py-2 text-xs border rounded-lg hover:border-black disabled:opacity-50 cursor-pointer"
                   >
                     Apply
                   </button>
@@ -168,7 +168,7 @@ const CheckoutPage = () => {
                   <span>${total.toFixed(2)}</span>
                 </div>
 
-                <button className="w-full bg-[#633426] text-white py-3 rounded-full mt-5 hover:opacity-90">
+                <button className="w-full bg-[#633426] text-white py-3 rounded-full mt-5 hover:opacity-90 cursor-pointer">
                   PLACE ORDER
                 </button>
 
