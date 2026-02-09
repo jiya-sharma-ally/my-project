@@ -33,7 +33,7 @@ const Men = () => {
   <Link key={card.id} to={`/men/${card.category}`} className="block">
     <div
       className={`relative ${card.bg} rounded-3xl p-6 sm:p-8 pb-14 sm:pb-16 
-      h-[320px] sm:h-[380px] md:h-[420px]
+      h-80 sm:h-95 md:h-105
       flex items-start justify-between overflow-hidden group
       transition-all duration-500 hover:scale-[1.02]`}
     >
