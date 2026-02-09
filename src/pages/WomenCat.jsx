@@ -144,15 +144,17 @@ const WomenCat = () => {
                     <div className="absolute top-3 right-3 z-10 bg-white p-2 rounded-full shadow cursor-pointer">
                       <IoMdHeartEmpty className="text-xl text-black hover:text-red-500" />
                     </div>
-
+                    
                     <img
                       src={p.img}
                       className="absolute inset-0 w-full h-full object-cover transition-opacity group-hover:opacity-0 cursor-pointer"
                     />
+                    <Link to="/women/:category">
                     <img
                       src={p.hoverImg}
                       className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity group-hover:opacity-100 cursor-pointer"
                     />
+                    </Link>
                   </div>
 
                   <div className="p-4">

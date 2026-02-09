@@ -180,16 +180,21 @@ const CategoryPage = () => {
                                       cursor-pointer opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition">
                         <IoMdHeartEmpty className="text-xl text-black hover:text-red-500" />
                       </div>
-
+                      <Link to="/product/:id">
                       <img
                         src={p.img}
                         className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
                       />
+                      </Link>
+                      <Link to="/product/:id">
                       <img
                         src={p.hoverImg}
                         className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                       />
+                      </Link>
                     </div>
+                    
+                    
 
                     {/* CONTENT: flex-grow ensures buttons align even if titles vary */}
                     <div className="p-4 flex flex-col grow">

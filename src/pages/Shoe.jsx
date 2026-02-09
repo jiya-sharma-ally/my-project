@@ -146,10 +146,12 @@ const Shoe = () => {
                       src={p.img}
                       className="absolute inset-0 w-full h-full object-cover transition-opacity group-hover:opacity-0 cursor-pointer"
                     />
+                    <Link to="/product/:id">
                     <img
                       src={p.hoverImg}
                       className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity group-hover:opacity-100 cursor-pointer"
                     />
+                    </Link>
                   </div>
 
                   <div className="p-4">
