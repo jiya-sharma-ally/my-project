@@ -17,6 +17,7 @@ import Rating from "./pages/Rating";
 import About from "./pages/about";
 import Privacy from "./pages/Privacy";
 import Contact from "./pages/Contact";
+import Lioness from "./pages/Lioness";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/lioness" element={<Lioness />} />
       </Routes>
 
       <Footer />
