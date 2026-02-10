@@ -25,7 +25,7 @@ const Contact = () => {
               <p className="text-gray-600">
                 Email us anytime and we’ll get back to you within 24 hours.
               </p>
-              <p className="mt-3 text-[#633426] font-medium">
+              <p className="mt-3 text-[#633426] font-medium cursor-pointer">
                 supportDriptees@gmail.com
               </p>
             </div>

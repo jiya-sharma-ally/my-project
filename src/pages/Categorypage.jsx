@@ -62,14 +62,14 @@ const CategoryPage = () => {
       <section className="min-h-screen mt-25 bg-[#fdf7f4] py-10 lg:py-20">
         <div className="max-w-7xl mx-auto px-4">
 
-          {/* BANNER: Responsive height and object-fit */}
+          {/* BANNER */}
           <div className="w-full h-48 sm:h-64 lg:h-80 mb-10 overflow-hidden rounded-xl">
             <img src={banner} className="w-full h-full object-cover" alt="Category Banner" />
           </div>
 
           <div className="flex flex-col lg:flex-row gap-10">
 
-            {/* FILTERS: Width controlled via flex-basis for better stability */}
+            {/* FILTERS*/}
             <aside className="w-full lg:w-1/3 xl:w-1/4">
               <div className="lg:sticky lg:top-10">
                 <h1 className="text-3xl lg:text-4xl font-bold mb-5">{title}</h1>
@@ -168,13 +168,13 @@ const CategoryPage = () => {
             </aside>
 
 
-            {/* PRODUCTS: Using auto-rows for consistency */}
+            {/* PRODUCTS */}
             <main className="w-full lg:w-2/3 xl:w-3/4">
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                 {filteredProducts.map((p) => (
                   <div key={p.id} className="bg-white rounded-xl shadow relative group flex flex-col">
 
-                    {/* IMAGE CONTAINER: Aspect ratio is key for responsiveness */}
+                    {/* IMAGE CONTAINER*/}
                     <div className="relative aspect-3/4 w-full overflow-hidden rounded-t-xl">
                       <div className="absolute top-3 right-3 z-10 bg-white p-2 rounded-full shadow 
                                       cursor-pointer opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition">
@@ -196,7 +196,7 @@ const CategoryPage = () => {
                     
                     
 
-                    {/* CONTENT: flex-grow ensures buttons align even if titles vary */}
+                    {/* CONTENT:*/}
                     <div className="p-4 flex flex-col grow">
                       <h3 className="text-sm font-semibold truncate">{p.name}</h3>
                       <p className="font-bold text-lg">₹{p.price}</p>

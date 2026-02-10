@@ -463,7 +463,7 @@ SNEAKER
       className={`py-3 w-full ${
         activeTab === tab
           ? "border-b-2 border-[#0f766e] text-[#0f766e]"
-          : "text-gray-400"
+          : "text-gray-400 cursor-pointer"
       }`}
     >
       {tab}

@@ -11,6 +11,7 @@ import Bestseller from "../components/home/Bestseller.jsx";
 
 
 
+
 const Home = () => {
   return (
     <>
@@ -33,6 +34,7 @@ const Home = () => {
       <section id="best-seller">
       <Bestseller />
       </section>
+      
  
       
     </>

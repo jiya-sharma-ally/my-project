@@ -44,7 +44,7 @@ const bestSellers = [
     price: "₹8,499",
     img: sneaker1,
     hoverImg: sneaker1Hover,
-     path: "/shoe" 
+     path: "/lioness" 
   },
   {
    id: 4,
@@ -68,7 +68,7 @@ const bestSellers = [
     price: "₹8,499",
     img: women2,
     hoverImg: sneaker2Hover,
-      path: "/shoe" 
+      path: "/lioness"
   }
 ];
 
