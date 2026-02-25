@@ -18,6 +18,7 @@ import About from "./pages/about";
 import Privacy from "./pages/Privacy";
 import Contact from "./pages/Contact";
 import Lioness from "./pages/Lioness";
+import Becomepartner from "./pages/Becomepartner";
 
 function App() {
   return (
@@ -43,6 +44,8 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/lioness" element={<Lioness />} />
+        <Route path="/becomepartner" element={<Becomepartner />} />
+
       </Routes>
 
       <Footer />
