@@ -52,7 +52,7 @@ const bestSellers = [
     price: "₹8,499",
     img: sneaker2,
     hoverImg: men2Hover,
-    path: "/men/t-shirts"
+    path: "/becomepartner"
   },
    {
    id: 5,
